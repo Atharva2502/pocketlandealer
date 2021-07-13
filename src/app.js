@@ -56,9 +56,12 @@ const app = express();
 
 // Session and Flash
 
+const URL = `${process.env.DB_URL}test` || "mongodb://localhost:27017/test"
+const SECRET = process.env.SECRET || "notagoodsecret"
+
 const sessionConfig = {
     name: 'session',
-    secret: 'notagoodsecret',
+    secret: SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -68,8 +71,8 @@ const sessionConfig = {
         maxAge: 1000 * 60 * 60 * 3
     },
     store: MongoStore.create({
-        mongoUrl: "mongodb+srv://Abhishek:abhi23@pld.08fbq.mongodb.net/test",
-        secret: "notgoodsecret",
+        mongoUrl: URL,
+        secret: SECRET,
         touchAfter: 60 * 60 * 24
     })
 }
@@ -1270,5 +1273,5 @@ app.post("/update-seller", requireLogin, async (req, res) => {
 // listening on port
 
 app.listen(port, () => {
-    console.log("connected to port");
+    console.log(`Connected to port - ${port}`);
 });
