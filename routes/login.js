@@ -60,7 +60,7 @@ router.post("/login", async (req, res) => {
                 }
             }
             else {
-                res.redirect("/home")
+                res.redirect("/")
             }
         }
         else if (!req.session.firsttimeuser) {
@@ -118,11 +118,11 @@ router.post("/login", async (req, res) => {
                 }
             }
             else {
-                res.redirect("/home")
+                res.redirect("/")
             }
         }
         else {
-            res.redirect("/home")
+            res.redirect("/")
         }
 
     } catch (error) {

@@ -148,7 +148,7 @@ app.use(helmet({ contentSecurityPolicy: false }));
 
 // ROUTING PAGES
 
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
     res.render("home");
 });
 
@@ -655,7 +655,7 @@ app.post("/sendotp", async (req, res) => {
             }
         }
         else {
-            res.redirect("/home")
+            res.redirect("/")
         }
     } catch (error) {
         req.flash("error", error.message);
@@ -711,7 +711,7 @@ app.post("/checkotp", async (req, res) => {
                 }
             }
             else {
-                res.redirect("/home")
+                res.redirect("/")
             }
         }
         else if (!req.session.firsttimeuser) {
@@ -754,11 +754,11 @@ app.post("/checkotp", async (req, res) => {
                 }
             }
             else {
-                res.redirect("/home")
+                res.redirect("/")
             }
         }
         else {
-            res.redirect("/home")
+            res.redirect("/")
         }
 
     } catch (error) {
@@ -914,7 +914,7 @@ app.post("/forgot-password", async (req, res) => {
             }
         }
         else {
-            res.redirect("/home")
+            res.redirect("/")
         }
     } catch (error) {
         req.flash("loggedIn", error.message)
@@ -986,7 +986,7 @@ app.post("/reset-password/:id/:token", async (req, res, next) => {
             }
         }
         else {
-            res.redirect("/home")
+            res.redirect("/")
         }
 
     } catch (error) {
@@ -1136,13 +1136,13 @@ app.post("/send-docs", async (req, res) => {
                 console.log("email sent");
 
                 req.session.destroy()
-                res.redirect("/home");
+                res.redirect("/");
             }
         });
 
     } catch (error) {
         req.session.destroy()
-        res.redirect("/home")
+        res.redirect("/")
     }
 })
 
