@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/f2f56f8a9c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="templates/views/login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md" id="top-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-3" href="home">
+                <img src="templates/views/Images/Logo Image.png" alt="This is logo" class="d-inline-block" id="logo">
+                <span id="website-name" class="user-select-none"><span class="text-dark">pocket</span><span
+                        class="text-danger">land</span><span class="text-dark">ealer</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav nav-pills flex-column flex-md-row navbar-nav">
+                    <li class="nav-item">
+                        <a class="flex-sm-fill text-sm-center nav-link user-select-none me-3" aria-current="page"
+                            href="home" id="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="flex-sm-fill text-sm-center nav-link user-select-none me-3" href="about-us"
+                            id="about-us">About
+                            Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="flex-sm-fill text-sm-center nav-link user-select-none" href="queries"
+                            id="queries">Queries</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal fade" id="otp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">OTP LOGIN</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="/sendotp" method="POST" id="fotp">
+                        <div class="modal-body">
+                            <div class="form-floating mb-3">
+                                <input type="tel" class="form-control pb-2" id="mobNo" required placeholder="123"
+                                    pattern="^[7-9]{1}[0-9]{9}$" title="Enter correct mobile number"
+                                    placeholder="##########" size="10" name="mobNo">
+                                <label for="mobNo" class="form-label">Enter Registered Mobile No</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Go Back</button>
+                            <button type="submit" class="btn btn-success">Send
+                                Otp</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="form-control container" id="form">
+            <%- include("success") %>
+                <%- include("logged") %>
+                    <%- include("mongoError") %>
+                        <p id="login" class="user-select-none">LOGIN</p>
+                        <form action="/login" method="POST">
+                            <section id="login-section">
+                                <div class="row">
+                                    <div class="col-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"
+                                            class="bi bi-person-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                    </div>
+                                    <div class="col-11">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="username" required
+                                                placeholder="abc" name="username">
+                                            <label for="username" class="form-label">Username</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"
+                                            class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z" />
+                                            <path
+                                                d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z" />
+                                        </svg>
+                                    </div>
+                                    <div class="col-11">
+                                        <div class="form-floating mb-3">
+                                            <input type="password" id="password" class="form-control" required
+                                                placeholder="xyz" name="pass">
+                                            <label for="password" class="form-label">Password</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <%- include("warning") %>
+                                    <div id="lgn">
+                                        <button class="btn btn-lg" id="login-btn" type="submit">Login</button>
+                                    </div>
+                            </section>
+                        </form>
+                        <p class="text-center lead text-light user-select-none">
+                            &mdash;&mdash;&mdash;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&mdash;&mdash;&mdash;
+                        </p>
+                        <section id="new-reset">
+                            <div>
+                                <div class="container-fluid" aria-label="Basic outlined example" id="btn-grp">
+                                    <a href="/google-login" id="google"><i class="fab fa-google"></i></a>
+                                    <a href="/facebook-login" id="facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a id="mob-no" type="button" data-bs-toggle="modal" data-bs-target="#otp"><i
+                                            class="fas fa-phone-alt"></i></a>
+                                </div>
+                                <hr>
+                                <span class="spans mb-2"><span class="form-text user-select-none">Don't have an
+                                        account?</span>
+                                    <button type="button"
+                                        class="btn btn-outline-light p-2 border border-2 btn-sm user-select-none"
+                                        id="sign-up" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign
+                                        Up!</button></span>
+
+                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered ">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="staticBackdropLabel">REGISTER</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="/register" method="POST">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control register-form"
+                                                            id="full-name" required placeholder="abc" name="fullName">
+                                                        <label for="full-name" class="form-label register-label">Full
+                                                            Name</label>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="email" class="form-control register-form"
+                                                            id="email" required placeholder="abc"
+                                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                                            name="email">
+                                                        <label for="email" class="form-label register-label">Enter
+                                                            Email</label>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="tel" class="form-control register-form" id="number"
+                                                            required placeholder="123" pattern="^[7-9]{1}[0-9]{9}$"
+                                                            title="Enter correct mobile number" placeholder="##########"
+                                                            size="10" name="mobile">
+                                                        <label for="number" class="form-label register-label">Mobile
+                                                            No.</label>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control register-form"
+                                                            id="create-username" required placeholder="abc"
+                                                            name="userName">
+                                                        <label for="create-username"
+                                                            class="form-label register-label">Create
+                                                            Username</label>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="password" class="form-control register-form"
+                                                            id="create-password" required placeholder="abc"
+                                                            name="password">
+                                                        <label for="create-password"
+                                                            class="form-label register-label">Create
+                                                            Password</label>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger"
+                                                            data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-success">Submit</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="spans mb-4">
+                                    <span class="form-text ms-2 user-select-none">Forgot Password?</span>
+                                    <button type="button"
+                                        class="btn btn-outline-light p-2 border border-2 btn-sm user-select-none"
+                                        id="click-me" data-bs-toggle="modal" data-bs-target="#forgotPass">
+                                        Click Me!</button></span>
+                                <div class="modal fade" id="forgotPass" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content" id="modal-content-f">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="staticBackdropLabel">FORGOT PASSWORD</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="/forgot-password" method="POST">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="email" class="form-control register-form"
+                                                            id="email" required placeholder="abc"
+                                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                                            name="fmail">
+                                                        <label for="email" class="form-label register-label">Enter
+                                                            Registered
+                                                            Email</label>
+                                                    </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-success">Send Link</button>
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+        </div>
+    </main>
+    <footer>
+        <nav id="footer">
+            <div class="container mt-0">
+                <div class="row">
+                    <div class="col-md text-center pt-3" id="location">
+                        <p>
+                        <h5 class="user-select-none text-dark">LOCATION</h5>
+                        <address class="user-select-none text-dark">
+                            Pimpri Chinchwad College Of Engineering And Research<br>
+                            <i>Plot No. B, Sector no. 110 Gate, no.1,<br>
+                                Laxmi Nagar, Ravet, Pune, Maharashtra 412101
+                            </i>
+                        </address>
+                        </p>
+                    </div>
+                    <div class="col-md text-center pt-3 user-select-none text-dark" id="contact">
+                        <p>
+                        <h5>CONTACT INFO</h5>
+                        <i>Email : </i>pocketlandealer@gmail.com<br>
+                        <i>Phone : </i>+91-9756xxxxx
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center pt-2 user-select-none text-dark">
+                Terms & Conditions
+            </p>
+        </nav>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

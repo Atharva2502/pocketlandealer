@@ -1,0 +1,132 @@
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+#form {
+  margin-top: 12%;
+  width: 40%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0%;
+  box-shadow: 10px 10px 20px rgba(52, 58, 64, 0.7);
+}
+
+#login-section {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.form-text {
+  font-size: 1em;
+  color: white;
+}
+
+#reset {
+  text-align: center;
+  font-size: 2em;
+  color: rgb(248, 249, 250);
+  letter-spacing: 0.5em;
+  font-weight: 200;
+  margin-top: 5%;
+  margin-bottom: 8%;
+}
+
+.inputs {
+  margin-left: 7em;
+  margin-right: 7em;
+}
+
+#btn {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  border-radius: 3em;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 7%;
+  margin-bottom: 7%;
+}
+
+#btn:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 2px 3px rgba(240, 240, 240, 0.5);
+}
+
+#website-name {
+  font-size: 1.2em;
+  padding-left: 0.7em;
+  font-family: Quicksand, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: black;
+}
+
+#top-nav {
+  background-color: rgba(233, 236, 239, 0.7);
+  box-shadow: 10px 10px 20px rgba(43, 43, 43, 0.4);
+  height: 5.5em;
+}
+
+@media (min-width: 0px) and (max-width: 576px) {
+  #form {
+    width: 100%;
+  }
+
+  .inputs {
+    margin-left: 5em;
+    margin-right: 5em;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  #form {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  #form {
+    width: 70%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  #form {
+    width: 60%;
+  }
+}
+
+#password:hover,
+#password:focus,
+#password:active {
+  box-shadow: none;
+  transform: scale(0.985);
+  box-shadow: 0 0 0 1px whitesmoke;
+  border: none;
+  transition-property: all;
+  transition: ease-in;
+  transition-duration: 0.2s;
+}
+
+input {
+  font-family: Open Sans, sans-serif;
+}

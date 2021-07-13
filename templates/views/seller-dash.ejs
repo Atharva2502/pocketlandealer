@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Seller Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="templates/views/seller-dash.css">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- header -->
+    <nav class="navbar navbar-light navbar-expand-md" id="top-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-3" href="home">
+                <img src="templates/views/Images/Logo Image.png" alt="This is logo" class="d-inline-block" id="logo">
+                <span id="website-name" class="user-select-none"><span class="text-dark">pocket</span><span
+                        class="text-danger">land</span><span class="text-dark">ealer</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav nav-pills flex-column flex-md-row navbar-nav">
+                    <li class="nav-item">
+                        <a class="flex-sm-fill text-sm-center nav-link user-select-none me-3" aria-current="page"
+                            href="home" id="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="flex-sm-fill text-sm-center nav-link user-select-none me-3" href="about-us"
+                            id="about-us">About
+                            Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="flex-sm-fill text-sm-center nav-link user-select-none" href="queries"
+                            id="queries">Queries</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal fade" id="mobile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">UPDATE MOBILE NUMBER <span><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                        class="bi bi-phone-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z" />
+                                    </svg></span></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/dUpdateMob" method="POST">
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control pb-2" id="current_mob" required
+                                        placeholder="123" pattern="^[7-9]{1}[0-9]{9}$"
+                                        title="Enter current mobile number" placeholder="##########" size="10"
+                                        name="currentMob">
+                                    <label for="current_mob" class="form-label">Enter Current Mobile
+                                        No.</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control pb-2" id="new_mob" required placeholder="123"
+                                        pattern="[0-9]{10}" title="Mobile Number must be of 10 digits only"
+                                        placeholder="##########" size="10" name="newMob">
+                                    <label for="new_mob" class="form-label">Enter New Mobile No.</label>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Update</a></button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="email" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">UPDATE EMAIL <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                        class="bi bi-envelope-fill" viewBox="0 2 16 16">
+                                        <path
+                                            d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+                                    </svg>
+                                </span></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/dUpdateEmail" method="POST">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control pb-2" id="current_mail" required
+                                        placeholder="123" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                        name="currentMail">
+                                    <label for="current_mail" class="form-label">Enter Current Email Id</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control pb-2" id="new_mail" required
+                                        placeholder="123" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                        name="newMail">
+                                    <label for="new_mail" class="form-label">Enter New Email Id</label>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Update</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="password" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">UPDATE PASSWORD <span><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="23" height="20" fill="currentColor"
+                                        class="bi bi-lock-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+                                    </svg></span></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/dUpdatePassword" method="POST">
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control pb-2" id="current_mob" required
+                                        placeholder="123" pattern="^[7-9]{1}[0-9]{9}$"
+                                        title="Enter current mobile number" placeholder="##########" size="10"
+                                        name="currentMob">
+                                    <label for="current_mob" class="form-label">Enter Registered Mobile No.</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control pb-2" id="current_pass" required
+                                        placeholder="123" name="currPass">
+                                    <label for="current_pass" class="form-label">Enter Current Password</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control pb-2" id="new_pass" required
+                                        placeholder="123" name="newPass">
+                                    <label for="new_pass" class="form-label">Enter New Password</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control pb-2" id="reEnter_pass" required
+                                        placeholder="123" name="checkNewPass">
+                                    <label for="reEnter_pass" class="form-label">Re-Enter New Password</label>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Update</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="logout" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+                tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalToggleLabel">DELETE MY ACCOUNT</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/logoutd" method="GET">
+                                <div class="form-text">
+                                    <p class="lead">Do you want to logout?</p>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go Back</button>
+                            <button class="btn btn-danger" type="submit">Logout</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="delete" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+                tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalToggleLabel">DELETE MY ACCOUNT</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/dDeleteAcc" method="POST">
+                                <div>
+                                    <label for="mobileNo" class="form-label">Enter Registered Mobile No to Delete
+                                        Your Account.</label>
+                                    <input type="tel" class="form-control" id="mobileNo" pattern="^[7-9]{1}[0-9]{9}$"
+                                        title="Enter correct mobile number" placeholder="##########" size="10"
+                                        name="mobileNo" required>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go Back</button>
+                            <button class="btn btn-danger" type="submit">Delete Account</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--Update Modal -->
+            <div class="modal fade" id="update" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">UPDATE SELLER FORM </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/update-seller" method="POST">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control pb-2" id="firstname" required
+                                        placeholder="123" name="firstName">
+                                    <label for="firstname" class="form-label">First Name</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control pb-2" id="middlename" required
+                                        placeholder="123" name="middleName">
+                                    <label for="middlename" class="form-label">Middle Name</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control pb-2" id="lastname" required
+                                        placeholder="123" name="lastName">
+                                    <label for="lastname" class="form-label">Last Name</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control pb-2" id="mobile" required placeholder="123"
+                                        pattern="^[7-9]{1}[0-9]{9}$" title="Enter correct mobile number"
+                                        placeholder="##########" size="10" name="mobile">
+                                    <label for="mobile" class="form-label">Mobile Number</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control pb-2" id="email" required placeholder="123"
+                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email">
+                                    <label for="email" class="form-label">Email</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control pb-2" id="price" required placeholder="123"
+                                        name="price">
+                                    <label for="price" class="form-label">Price (Rs)</label>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success" name="update">Update</a></button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- main -->
+    <div class="wrapper">
+
+        <nav id="sidebar">
+            <div class="sidebar-header user-select-none">
+                <h3>WELCOME</h3>
+            </div>
+
+            <ul class="list-unstyled components user-select-none">
+                <p>&nbsp;
+                    &nbsp;
+                    Hello, <%= user %>
+                </p>
+                <li><a type="button" data-bs-toggle="modal" data-bs-target="#mobile">Update
+                        Mobile No.</a></li>
+                <li><a type="button" data-bs-toggle="modal" data-bs-target="#email">Update Email</a></li>
+                <li><a type="button" data-bs-toggle="modal" data-bs-target="#password">Update Password</a></li>
+                <hr class="dropdown-divider">
+                </li>
+                <li><a href="seller-form">Post New Plot</a></li>
+                <hr class="dropdown-divider">
+                <li><a type="button" data-bs-toggle="modal" data-bs-target="#logout">Sign Out</a></li>
+                <li><a type="button" data-bs-toggle="modal" data-bs-target="#delete">Delete My Account</a></li>
+            </ul>
+        </nav>
+
+        <div id="content" class="user-select-none">
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <p id="text">All the plots posted by you !</p>
+                    <form class="d-flex" id="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+            <%- include("updates") %>
+                <%- include("updatee") %>
+                    <%- include("mongoError") %>
+                        <main>
+                            <div class="container">
+                                <div class="row">
+                                    <% items.forEach(function(path) { %>
+                                        <div class="col-md-4 mt-5 mb-5">
+                                            <div class="card">
+                                                <div id="count">
+                                                    <button type="button" class="btn btn-primary" id="thumb">
+                                                        <i class="fas fa-thumbs-up"></i>
+                                                        <div id="hidden">
+                                                            <b>Interested Buyers</b>
+                                                        </div>
+                                                        <span
+                                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                                            <%= path.viewcount %>
+                                                                <span class="visually-hidden">unread messages</span>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <div id="carouselExampleControls" class="carousel slide"
+                                                    data-bs-ride="carousel">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <img src="<%= path.userdata.userDocs.plotimages.plotimage1.url %>"
+                                                                class="d-block w-100 card-img-top">
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="<%= path.userdata.userDocs.plotimages.plotimage2.url %>"
+                                                                class="d-block w-100 card-img-top">
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="<%= path.userdata.userDocs.plotimages.plotimage3.url %>"
+                                                                class="d-block w-100 card-img-top">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item card-data"><b>Owner</b> |
+                                                        <%= path.userdata.firstName %>
+                                                            <%= path.userdata.middleName %>
+                                                                <%= path.userdata.lastName %>
+                                                    </li>
+                                                    <li class="list-group-item card-data"><b>Mobile No</b> | <%=
+                                                            path.userdata.mobNo %>
+                                                    </li>
+                                                    <li class="list-group-item card-data">
+                                                        <b>Address | </b>
+                                                        <%= path.userdata.add %>
+                                                    </li>
+                                                    <li class="list-group-item card-data"><b>Area</b> | <%=
+                                                            path.userdata.areaPlot %>&nbsp;m<sup>2</sup>
+                                                    </li>
+                                                    <li class="list-group-item card-data">
+                                                        <b>Price</b> |
+                                                        <%= path.userdata.pricePlot %>&nbsp;/- Rs
+                                                    </li>
+                                                </ul>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <form action="/delete-seller" method="POST">
+                                                            <div class="card-body text-center">
+                                                                <button class="btn btn-outline-danger ud" type="submit"
+                                                                    value="<%= path.userdata.add %> "
+                                                                    name="delete">DELETE</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="col">
+                                                        <form action="/update" method="POST">
+                                                            <div class="card-body text-center">
+                                                                <button class="btn btn-outline-success ud" type="submit"
+                                                                    value="<%= path.userdata.add %> " name="update"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#update">UPDATE</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% }) %>
+                                </div>
+                            </div>
+        </div>
+        </main>
+    </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <nav id="footer" class="user-select-none">
+            <div class="container mt-0">
+                <div class="row">
+                    <div class="col-md text-center pt-3 text-dark" id="location">
+                        <p>
+                        <h5>LOCATION</h5>
+                        <address>
+                            Pimpri Chinchwad College Of Engineering And Research<br>
+                            <i>Plot No. B, Sector no. 110 Gate, no.1,<br>
+                                Laxmi Nagar, Ravet, Pune, Maharashtra 412101
+                            </i>
+                        </address>
+                        </p>
+                    </div>
+                    <div class="col-md text-center pt-3 text-dark" id="contact">
+                        <p>
+                        <h5>CONTACT INFO</h5>
+                        <i>Email : </i>pocketlandealer@gmail.com<br>
+                        <i>Phone : </i>+91-9756xxxxx
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center pt-2" id="terms">
+                Terms & Conditions
+            </p>
+        </nav>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

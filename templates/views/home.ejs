@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="templates/views/home.css">
+    <script src="templates/views/home.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="modal fade" id="english" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">ENGLISH</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#userModal"
+                        aria-label="Close" data-bs-toggle="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="english">
+                        <p class="mt-3">1) Click on the login button at top right corner
+                            of home
+                            page
+                        <p>2) Then select buyer(if you want to buy a plot) or select
+                            the Seller button (if to want to sell your plot)</p>
+                        <p>3) On The Login page user should fill his/her login details
+                            and click
+                            on
+                            login button</p>
+                        <p>4) After selecting the buyer option a new page is displayed
+                            fill the
+                            required
+                            details</p>
+                        <p>5) After selecting the seller option on the next page fill
+                            the
+                            required
+                            details and upload necessary documents.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-target="#userModal"
+                        data-bs-toggle="modal">Go Back</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Understood !</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="marathi" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">MARATHI</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        data-bs-target="#userModal" data-bs-toggle="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="marathi">
+                        <p class="mt-3">१) मुख्य पृष्ठाच्या उजव्या कोपर्यात लॉगिन बटणावर
+                            क्लिक करा.</p>
+
+                        <p>२) मग खरेदीदार(Buyer) निवडा (जर तुम्हाला प्लॉट घ्यायचा असेल
+                            तर) किंवा विक्रेता(Seller) बटण निवडा (जर तुमचा प्लॉट विकायचा
+                            असेल तर).</p>
+
+                        <p>३) लॉगिन पेजवर वापरकर्त्याने त्याची लॉगिन तपशील भरावी आणि
+                            लॉगिन बटणावर क्लिक करावे.</p>
+
+                        <p>४) खरेदीदाराचा पर्याय निवडल्यानंतर एक नवीन पृष्ठ प्रदर्शित
+                            केले जाईल तिकडे आवश्यक तपशील भरा.</p>
+
+                        <p>५) विक्रेता पर्याय निवडल्यानंतर पुढील पृष्ठावर आवश्यक तपशील
+                            भरा आणि आवश्यक कागदपत्रे अपलोड करा.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-target="#userModal" data-bs-dismiss="modal"
+                        data-bs-toggle="modal">
+                        परत जा</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">कळले !</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <section>
+            <div id="carousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false"
+                data-bs-interval="5000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <img src="templates/views/Images/home/alex-shutin-XsC0GHXi-8k-unsplash 1920-1080.jpg"
+                            class="d-block w-100" alt="This is a first image.">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="templates/views/Images/home/allison-huang-_u8KhAZRGHs-unsplash 1920-1080.jpg"
+                            class="d-block w-100" alt="This is a second image.">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="templates/views/Images/home/federico-respini-sYffw0LNr7s-unsplash 1920-1080.jpg"
+                            class="d-block w-100" alt="This is a third image.">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="templates/views/Images/home/ibrahim-mohamed-iI7o2kCH4DE-unsplash 1920-1080.jpg"
+                            class="d-block w-100" alt="This is a fourth image.">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="templates/views/Images/home/sreenivas-O9ApJWoI6nY-unsplash 1920-1080.jpg"
+                            class="d-block w-100" alt="This is a fifth image.">
+                    </div>
+                </div>
+                <div id="welcome">
+                    <span class="lead display-1 user-select-none">WELCOME</span>
+                </div>
+                <div id="info">
+                    <p class="user-select-none"><i>Click on the </i><b>LOGIN</b> <i>Button to begin your journey
+                            of
+                            Buying or
+                            Selling
+                            Plots.</i>
+                    </p><br>
+                </div>
+                <div id="userManual">
+                    <button class="btn" type="button" id="userbtn" data-bs-toggle="modal" data-bs-target="#userModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white"
+                            class="bi bi-journal-text" viewBox="0 0 16 16">
+                            <path
+                                d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+                            <path
+                                d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                            <path
+                                d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                        </svg>
+                    </button>
+                    <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">USER MANUAL</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="nav">
+                                        <div class="nav-item">
+                                            <button class="btn" type="button" id="english" data-bs-toggle="modal"
+                                                data-bs-target="#english" data-bs-dismiss="modal">ENGLISH</button>
+                                        </div>
+                                        <div class="nav-item">
+                                            <button class="btn" type="button" id="marathi" data-bs-toggle="modal"
+                                                data-bs-target="#marathi" data-bs-dismiss="modal">MARATHI</button>
+                                        </div>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary"
+                                        data-bs-dismiss="modal">Understood!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="#loginModal" type="button" class="btn btn-light btn-md-lg" id="login"
+                        data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a>
+                </div>
+                <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">CONTINUE</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                How Do You Want To Proceed?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go
+                                    Back</button>
+                                <form action="/homes" method="POST">
+                                    <button type="submit" class="btn btn-primary" name="seller">As a
+                                        Seller</button>
+                                </form>
+                                <form action="/homeb" method="POST">
+                                    <button type="submit" class="btn btn-primary" name="buyer">As a
+                                        Buyer</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="top">
+            <h1 class="display-4 text-center h1 user-select-none pt-3 pb-2"><span class="text-dark">pocket</span><span
+                    class="text-danger">land</span><span class="text-dark">ealer</span></h1>
+            <div class="col user-select-none pb-2" id="para1">
+                <p>Do you want to buy/sell your own plot ? Then we at <b>pocketlandealer</b> are here to
+                    help you.</p>
+                <p>At pocketlandealer, we make it simple and secure for plot vendors and purchasers to connect</p>
+                <p>So get started on your quest right now!</p>
+            </div>
+        </div>
+        <div class="custom-shape-divider-top-1624788556">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+        <section class="container">
+            <div class="row" id="main">
+                <div>
+                    <h1 class="display-6 text-center mb-5 text-light user-select-none fade1" id="features">SOME
+                        FEATURES
+                    </h1>
+                    <div class="row mt-5 justify-content-md-evenly user-select-none fade1">
+                        <div class="col-md-5 col-12 mt-5 fade-in-section is-visible">
+                            <img src="templates/views/Images/vectors/Asset 4.png" alt="image1" class="imgs">
+                        </div>
+                        <div class="col-md-5 col-12 mt-5 details">
+                            <h2 class="text-center text-light mt-2 heading">SECURITY</h2>
+                            <p class="text-light mt-5 lead">The major goal of building the website was to make it
+                                easier for
+                                consumers to acquire and trade open lands in a more secure manner. Before seeing
+                                the
+                                land footage and associated paperwork, the buyer must complete a login and
+                                registration
+                                system in which he or she must enter his or her personal information. This
+                                ensures the
+                                security of the seller's property.</p>
+                        </div>
+                    </div>
+                    <div class="row mt-5 justify-content-md-evenly user-select-none fade1">
+                        <div class="col-md-5 col-12 text-light details">
+                            <h2 class="text-center mt-2 heading">DATABASE MANAGEMENT</h2>
+                            <p class="mt-5 lead">The buyer and seller's documents are stored, retrieved, and
+                                organised using
+                                a real-time
+                                database. The database management system is utilised to keep track of proof
+                                documents as
+                                well as other activities.</p>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <img src="templates/views/Images/vectors/Asset 2.png" alt="image1" class="imgs">
+                        </div>
+                    </div>
+                    <div class="row mt-5 justify-content-md-evenly user-select-none fade1">
+                        <div class="col-md-5 col-12">
+                            <img src="templates/views/Images/vectors/Asset 1.png" alt="image1" class="imgs">
+                        </div>
+                        <div class="col-md-5 col-12 text-light details">
+                            <h2 class="text-center mt-2 heading">USER-FRIENDLY</h2>
+                            <p class="mt-5 lead text-center">The user interface is simple to navigate and
+                                utilise, which benefits users and saves them time.</p>
+                        </div>
+                    </div>
+                    <div class="row mt-5 justify-content-md-evenly mb-5 user-select-none fade1">
+                        <div class="col-md-5 col-12 text-light details">
+                            <h2 class="text-center mt-2 heading">VERIFICATION</h2>
+                            <p class="mt-5 lead">Safe Logins are used to verify the user's identification on
+                                our
+                                website. In
+                                this field,
+                                the user should provide personal information such as their email address, phone
+                                number, etc. The user can then go to the next stage.</p>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <img src="templates/views/Images/vectors/Asset 3.png" alt="image1" class="imgs1">
+                        </div>
+                    </div>
+                    <div class="row mt-5 mb-5">
+                        <div class="modal fade" id="login1Modal" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">CONTINUE</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        How Do You Want To Proceed?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go
+                                            Back</button>
+                                        <form action="/homes" method="POST">
+                                            <button type="submit" class="btn btn-primary" name="seller">As a
+                                                Seller</button>
+                                        </form>
+                                        <form action="/homeb" method="POST">
+                                            <button type="submit" class="btn btn-primary" name="buyer">As a
+                                                Buyer</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <a href="#" type="button" class="btn btn-light btn-lg mb-5" id="login1"
+                                    data-bs-toggle="modal" data-bs-target="#login1Modal">LOGIN</a>
+                            </div>
+                            <p class="text-center text-light lead user-select-none" id="login_info">Click here
+                                to
+                                go to Login</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div id="footer">
+            <div class="card text-center user-select-none">
+                <div class="card-body">
+                    <h5 class="card-title">KNOW MORE</h5>
+                    <p class="card-text">For More Information Visit the Links Below</p>
+                    <a href="about-us" class="btn btn-dark me-3">About Us</a>
+                    <a href="queries" class="btn btn-dark ms-3">Queries</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="attribution">
+        <a href="http://www.freepik.com" class="mt-0 pt-0 small text-white">Vectors - Designed by
+            vectorjuice
+            /
+            Freepik</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

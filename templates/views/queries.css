@@ -1,0 +1,195 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body {
+    background-color: #e4eeff;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: black;
+}
+
+#navbarNav {
+    margin: 1em;
+    font-size: 1.15em;
+    justify-content: flex-end;
+}
+
+#navbarNav a {
+    margin-right: 0.5em;
+    padding: 0.5em;
+}
+
+#website-name {
+    font-size: 1.3em;
+    padding-left: 0.7em;
+    font-family: Noto Serif, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+#logo {
+    width: 2.7em;
+    height: 2.7em;
+}
+
+a {
+    text-decoration: none;
+}
+
+#top-nav {
+    background-color: white;
+}
+
+hr {
+    color: #E9ECEF;
+}
+
+#home {
+    border-radius: 0.4em;
+    color: black;
+}
+
+#about-us {
+    border-radius: 0.4em;
+    color: black;
+}
+
+#queries {
+    border-radius: 0.4em;
+    color: white;
+    background-color: #7386D5;
+}
+
+#home:hover {
+    border-radius: 0.4em;
+    background-color: #7386D5;
+    color: white;
+    transform: scale(0.95);
+    transition: transform;
+    transition-duration: 0.5s;
+    box-shadow: 0 5px 15px -5px #00000070;
+}
+
+#about-us:hover {
+    border-radius: 0.4em;
+    background-color: #7386D5;
+    color: white;
+    transform: scale(0.95);
+    transition: transform;
+    transition-duration: 0.5s;
+    box-shadow: 0 5px 15px -5px #00000070;
+}
+
+h1 {
+    color: #7386D5;
+    letter-spacing: 0.5rem;
+    font-family: 'PT Serif',sans-serif;
+}
+
+#thank {
+    font-size: 3em;
+    text-align: center;
+    font-family: 'Berkshire Swash',sans-serif;
+    font-weight: 200;
+    color: #4c5892;
+    text-align: center;
+}
+
+.contact {
+    font-size: 1.5em;
+}
+
+.email {
+    font-size: 1.5em;
+}
+
+@media (min-width: 0px) and (max-width: 576px) {
+    #location {
+    border-right: 0;
+    border-bottom: 1px solid black;
+    }
+
+    #home {
+        text-align: center;
+    }
+
+    #about-us {
+        text-align: center;
+    }
+
+    #queries {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .contact {
+        font-size: 1.5em;
+        color: white;
+    }
+
+    .email {
+        font-size: 1.5em;
+        color: white;
+        padding-bottom: 8%;
+        border-bottom: 1px solid grey;
+    }
+
+    .svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .st-line {
+        display: none;
+    }
+
+    .num {
+        display: block;
+    }
+
+    #contact {
+        background: rgba(50,50,50,0.3);
+        margin-right: 0.3em;
+        margin-left: 0.5em;
+        border-radius: 1em;
+    }
+
+    #svg {
+        height: 10em;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+
+    #location {
+        border-right: 0;
+        border-bottom: 1px solid white;
+    }
+}

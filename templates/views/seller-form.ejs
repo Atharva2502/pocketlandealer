@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Seller Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="templates/views/seller.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- header -->
+    <nav class="navbar navbar-light navbar-expand-md" id="top-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-3" href="home">
+                <img src="templates/views/Images/Logo Image.png" alt="This is logo" class="d-inline-block" id="logo">
+                <span id="website-name" class="user-select-none"><span class="text-dark">pocket</span><span
+                        class="text-danger">land</span><span class="text-dark">ealer</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav nav-pills flex-column flex-md-row navbar-nav">
+                    <li class="nav-item">
+                        <a class="flex-sm-fill text-sm-center nav-link user-select-none me-3" aria-current="page"
+                            href="home" id="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="flex-sm-fill text-sm-center nav-link user-select-none me-3" href="about-us"
+                            id="about-us">About
+                            Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="flex-sm-fill text-sm-center nav-link user-select-none" href="queries"
+                            id="queries">Queries</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal fade" id="mobile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">UPDATE MOBILE NUMBER <span><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                        class="bi bi-phone-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z" />
+                                    </svg></span></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/updateMob" method="POST">
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control pb-2" id="current_mob" required
+                                        placeholder="123" pattern="^[7-9]{1}[0-9]{9}$"
+                                        title="Enter correct mobile number" placeholder="##########" size="10"
+                                        name="currentMob">
+                                    <label for="current_mob" class="form-label">Enter Current Mobile
+                                        No.</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control pb-2" id="new_mob" required placeholder="123"
+                                        pattern="^[7-9]{1}[0-9]{9}$" title="Enter correct mobile number"
+                                        placeholder="##########" size="10" name="newMob">
+                                    <label for="new_mob" class="form-label">Enter New Mobile No.</label>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Update</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="email" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">UPDATE EMAIL <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                        class="bi bi-envelope-fill" viewBox="0 2 16 16">
+                                        <path
+                                            d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+                                    </svg>
+                                </span></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/updateEmail" method="POST">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control pb-2" id="current_mail" required
+                                        placeholder="123" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                        name="currentMail">
+                                    <label for="current_mail" class="form-label">Enter Current Email Id</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control pb-2" id="new_mail" required
+                                        placeholder="123" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                        name="newMail">
+                                    <label for="new_mail" class="form-label">Enter New Email Id</label>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Update</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="password" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">UPDATE PASSWORD <span><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="23" height="20" fill="currentColor"
+                                        class="bi bi-lock-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+                                    </svg></span></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/updatePassword" method="POST">
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control pb-2" id="current_mobile" required
+                                        placeholder="123" pattern="^[7-9]{1}[0-9]{9}$"
+                                        title="Enter correct mobile number" placeholder="##########" size="10"
+                                        name="currentMob">
+                                    <label for="current_mob" class="form-label">Enter Current Mobile
+                                        No.</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control pb-2" id="current_pass" required
+                                        placeholder="123" name="currPass">
+                                    <label for="current_pass" class="form-label">Enter Current Password</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control pb-2" id="new_pass" required
+                                        placeholder="123" name="newPass">
+                                    <label for="new_pass" class="form-label">Enter New Password</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control pb-2" id="reEnter_pass" required
+                                        placeholder="123" name="checkNewPass">
+                                    <label for="reEnter_pass" class="form-label">Re-Enter New Password</label>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Update</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="logout" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+                tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalToggleLabel">DELETE MY ACCOUNT</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/logout" method="GET">
+                                <div class="form-text">
+                                    <p class="lead">Do you want to logout?</p>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go Back</button>
+                            <button class="btn btn-danger" type="submit">Logout</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="delete" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+                tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalToggleLabel">DELETE MY ACCOUNT</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/deleteAcc" method="POST">
+                                <div>
+                                    <label for="mobileNo" class="form-label">Enter Registered Mobile No to Delete
+                                        Your Account.</label>
+                                    <input type="tel" class="form-control" id="mobileNo" pattern="^[7-9]{1}[0-9]{9}$"
+                                        title="Enter correct mobile number" placeholder="##########" size="10"
+                                        name="mobileNo" required>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go Back</button>
+                            <button class="btn btn-danger" type="submit">Delete Account</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- main -->
+    <div class="wrapper">
+
+        <nav id="sidebar">
+            <div class="sidebar-header user-select-none">
+                <h3>WELCOME</h3>
+            </div>
+
+            <ul class="list-unstyled components user-select-none">
+                <p>&nbsp; &nbsp;
+                    Hello, <%= user %>
+                </p>
+                <li><a type="button" data-bs-toggle="modal" data-bs-target="#mobile">Update
+                        Mobile No.</a></li>
+                <li><a type="button" data-bs-toggle="modal" data-bs-target="#email">Update Email</a></li>
+                <li><a type="button" data-bs-toggle="modal" data-bs-target="#password">Update Password</a></li>
+                <hr class="dropdown-divider">
+                </li>
+                <li><a type="button" data-bs-toggle="modal" data-bs-target="#logout">Sign Out</a></li>
+                <li><a type="button" data-bs-toggle="modal" data-bs-target="#delete">Delete My Account</a></li>
+            </ul>
+        </nav>
+        <div id="content" class="user-select-none">
+            <nav>
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+            <%- include("updates") %>
+                <%- include("updatee") %>
+                    <%- include("mongoError") %>
+                        <main id="form">
+                            <form class="row g-3 container-fluid" action="/seller-form" method="POST"
+                                enctype="multipart/form-data" id="seller_form">
+                                <h1 class="text-center display-4">SELLER FORM</h1>
+                                <hr>
+                                <h2 class="display-6 text-center">PERSONAL INFORMATION</h2>
+                                <p class="text-center mt-0 mb-0">(Enter Information Only of Land Owner)</p>
+                                <p class="mt-0 text-danger text-md-start text-sm-center" id="mandatory">(All Fields are
+                                    Mandatory)
+                                </p>
+                                <div class="col-4">
+                                    <label for="first_name" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="first_name" required name="firstName">
+                                </div>
+                                <div class="col-4">
+                                    <label for="middle_name" class="form-label">Middle Name</label>
+                                    <input type="text" class="form-control" id="middle_name" required name="middleName">
+                                </div>
+                                <div class="col-4">
+                                    <label for="last_name" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="last_name" required name="lastName">
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <label for="gender" class="form-label">Gender</label>
+                                    <select name="gender" id="gender" class="form-select">
+                                        <option value="none">--Please Select Gender--</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="others">Others</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <label for="dob" class="form-label">Date Of Birth</label>
+                                    <input type="date" class="form-control" id="dob" required name="dob">
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <label for="mob_no" class="form-label">Mobile Number (+91)</label>
+                                    <input type="tel" class="form-control" id="mob_no" required
+                                        pattern="^[7-9]{1}[0-9]{9}$" title="Enter correct mobile number"
+                                        placeholder="##########" size="10" name="mobNo">
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required
+                                        placeholder="example@.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                        name="email">
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <label for="aadhar" class="form-label">Aadhar Number
+                                    </label>
+                                    <input type="tel" class="form-control" id="aadhar" required pattern="[0-9]{12}"
+                                        placeholder="xxxx-xxxx-xxxx"
+                                        title="Aadhar Number must be 12 digits only.(Do not enter spaces)" size="12"
+                                        name="aadharNo">
+                                </div>
+                                <div class="col-md-4 col-6 mb-4">
+                                    <label for="voter_id" class="form-label">Voter Id</label>
+                                    <input type="text" class="form-control" id="voter_id" required
+                                        pattern="([A-Z]){3}([0-9]){7}?$" size="10"
+                                        title="Voter Id must be 10 characters long containing 3 Alphabets followed by 7 numbers."
+                                        placeholder="ABC1234567" name="voterId">
+                                </div>
+                                <hr>
+                                <h2 class="display-6 text-center">DETAILS OF LAND</h2>
+                                <div class="col-md-6">
+                                    <label for="inputAddress" class="form-label">Correspondance Address</label>
+                                    <input type="text" class="form-control" id="inputAddress" required name="corrAdd">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputAddress2" class="form-label">Address Of Plot</label>
+                                    <input type="text" class="form-control" id="inputAddress2" required name="add">
+                                </div>
+                                <p class="mb-0">
+                                    Country : India&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    State : Maharashtra
+                                </p>
+                                <div class="col-md-3 col-6">
+                                    <label for="division" class="form-label">Division</label>
+                                    <select name="division" id="division" class="form-select" required>
+                                        <option value="none" selected>--Select a Division--</option>
+                                        <option value="amravati">Amravati</option>
+                                        <option value="aurangabad">Aurangabad</option>
+                                        <option value="konkan">Konkan</option>
+                                        <option value="nagpur">Nagpur</option>
+                                        <option value="nashik">Nashik</option>
+                                        <option value="pune">Pune</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <label for="district" class="form-label">District</label>
+                                    <select name="district" id="district" class="form-select" required>
+                                        <option value="akola">Akola</option>
+                                        <option value="amravati">Amravati</option>
+                                        <option value="buldana">Buldana</option>
+                                        <option value="yavatmal">Yavatmal</option>
+                                        <option value="washim">Washim</option>
+                                        <option value="aurangabad">Aurangabad</option>
+                                        <option value="beed">Beed</option>
+                                        <option value="jalna">Jalna</option>
+                                        <option value="osmanabad">Osmanabad</option>
+                                        <option value="nanded">Nanded</option>
+                                        <option value="latur">Latur</option>
+                                        <option value="parbhani">Parbhani</option>
+                                        <option value="hingoli">Hingoli</option>
+                                        <option value="mumbai_city">Mumbai City</option>
+                                        <option value="mumbai_suburban">Mumbai Suburban</option>
+                                        <option value="thane">Thane</option>
+                                        <option value="palghar">Palghar</option>
+                                        <option value="raigad">Raigad</option>
+                                        <option value="ratnagiri">Ratnagiri</option>
+                                        <option value="sindhudurg">Sindhudurg</option>
+                                        <option value="thane">Bhandara</option>
+                                        <option value="thane">Chandrapur</option>
+                                        <option value="thane">Gadchiroli</option>
+                                        <option value="thane">Gondia</option>
+                                        <option value="thane">Nagpur</option>
+                                        <option value="thane">Wardha</option>
+                                        <option value="thane">Dhule</option>
+                                        <option value="thane">Jalgaon</option>
+                                        <option value="thane">Nandurbar</option>
+                                        <option value="thane">Nashik</option>
+                                        <option value="thane">Ahmednagar</option>
+                                        <option value="thane">Kolhapur</option>
+                                        <option value="thane">Pune</option>
+                                        <option value="thane">Sangli</option>
+                                        <option value="thane">Satara</option>
+                                        <option value="thane">Solapur</option>
+                                        <option value="none" selected>--Select a District--</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <label for="taluka" class="form-label">Taluka</label>
+                                    <select name="taluka" id="taluka" class="form-select" required>
+                                        <option value="kankavli">Kankavli</option>
+                                        <option value="kudal">Kudal</option>
+                                        <option value="devgad">Devgad</option>
+                                        <option value="dodamarg">Dodamarg</option>
+                                        <option value="malwan">Malwan</option>
+                                        <option value="vengurla">Vengurla</option>
+                                        <option value="vaibhavwadi">Vaibhavwadi</option>
+                                        <option value="sawantwadi">Sawantwadi</option>
+                                        <option value="khed">Khed</option>
+                                        <option value="guhagar">Guhagar</option>
+                                        <option value="chiplun">Chiplun</option>
+                                        <option value="dapoli">Dapoli</option>
+                                        <option value="mandangad">Mandangad</option>
+                                        <option value="ratnagiri">Ratnagiri</option>
+                                        <option value="rajapur">Rajapur</option>
+                                        <option value="lanja">Lanja</option>
+                                        <option value="sangameshwar">Sangameshwar</option>
+                                        <option value="alibaug">Alibaug</option>
+                                        <option value="uran">Uran</option>
+                                        <option value="karjat">Karjat</option>
+                                        <option value="khalapur">Khalapur</option>
+                                        <option value="tala">Tala</option>
+                                        <option value="panvel">Panvel</option>
+                                        <option value="poladpur">Poladpur</option>
+                                        <option value="mahad">Mahad</option>
+                                        <option value="mangaon">Mangaon</option>
+                                        <option value="murud">Murud</option>
+                                        <option value="mhasla">Mhasla</option>
+                                        <option value="roha">Roha</option>
+                                        <option value="shrivardhan">Shrivardhan</option>
+                                        <option value="sudhagad">Sudhagad</option>
+                                        <option value="kurla">Kurla</option>
+                                        <option value="andheri">Andheri</option>
+                                        <option value="borivali">Borivali</option>
+                                        <option value="ambarnath">Ambarnath</option>
+                                        <option value="ulhasnagar">Ulhasnagar</option>
+                                        <option value="kalyan">Kalyan</option>
+                                        <option value="thane">Thane</option>
+                                        <option value="bhiwandi">Bhiwandi</option>
+                                        <option value="murbad">Murbad</option>
+                                        <option value="shahapur">Shahapur</option>
+                                        <option value="jawhar">Jawhar</option>
+                                        <option value="dahanu">Dahanu</option>
+                                        <option value="talasari">Talasari</option>
+                                        <option value="palghar">Palghar</option>
+                                        <option value="mokhada">Mokhada</option>
+                                        <option value="vasai">Vasai</option>
+                                        <option value="vada">Vada</option>
+                                        <option value="vikramgad">Vikramgad</option>
+                                        <option value="igatpuri">Igatpuri</option>
+                                        <option value="kalwan">Kalwan</option>
+                                        <option value="chandwad">Chandwad</option>
+                                        <option value="trimbakeshwar">Trimbakeshwar</option>
+                                        <option value="dindori">Dindori</option>
+                                        <option value="deola">Deola</option>
+                                        <option value="nashik">Nashik</option>
+                                        <option value="nandgaon">Nandgaon</option>
+                                        <option value="niphad">Niphad</option>
+                                        <option value="peth">Peth</option>
+                                        <option value="baglan">Baglan</option>
+                                        <option value="malegaon">Malegaon</option>
+                                        <option value="yeola">Yeola</option>
+                                        <option value="sinnar">Sinnar</option>
+                                        <option value="surgana">Surgana</option>
+                                        <option value="akkalkuwa">Akkalkuwa</option>
+                                        <option value="akrani">Akrani</option>
+                                        <option value="talode">Talode</option>
+                                        <option value="navapur">Navapur</option>
+                                        <option value="nandurbar">Nandurbar</option>
+                                        <option value="shahada">Shahad</option>
+                                        <option value="dhule">Dhule</option>
+                                        <option value="shirpur">Shirpur</option>
+                                        <option value="sindkhede">Sindkhede</option>
+                                        <option value="sakri">Sakri</option>
+                                        <option value="amalner">Amalner</option>
+                                        <option value="erandol">Erandol</option>
+                                        <option value="chalisgaon">Chalisgaon</option>
+                                        <option value="chopda">Chopda</option>
+                                        <option value="jalgaon">Jalgaon</option>
+                                        <option value="jamner">Jamner</option>
+                                        <option value="dharangaon">Dharangaon</option>
+                                        <option value="pachora">Pachora</option>
+                                        <option value="parola">Parola</option>
+                                        <option value="bodwad">Bodwad</option>
+                                        <option value="bhadgaon">Bhadgaon</option>
+                                        <option value="bhusawal">Bhusawal</option>
+                                        <option value="muktainagar">Muktainagar</option>
+                                        <option value="yawal">Yawal</option>
+                                        <option value="raver">Raver</option>
+                                        <option value="akole">Akole</option>
+                                        <option value="ahmednagar">Ahmednagar</option>
+                                        <option value="karjat">Karjat</option>
+                                        <option value="kopargaon">Kopargaon</option>
+                                        <option value="jamkhed">Jamkhed</option>
+                                        <option value="nevasa">Nevasa</option>
+                                        <option value="pathardi">Pathardi</option>
+                                        <option value="parner">Parner</option>
+                                        <option value="rahata">Rahata</option>
+                                        <option value="rahuri">Rahuri</option>
+                                        <option value="shevgaon">Shevgaon</option>
+                                        <option value="shrigonda">Shrigonda</option>
+                                        <option value="shrirampur">Shrirampur</option>
+                                        <option value="sangamner">Sangamner</option>
+                                        <option value="akola">Akola</option>
+                                        <option value="akot">Akot</option>
+                                        <option value="telhara">Telhara</option>
+                                        <option value="patur">Patur</option>
+                                        <option value="barshitakli">Barshitakli</option>
+                                        <option value="balapur">Balapur</option>
+                                        <option value="murtujapur">Murtujapur</option>
+                                        <option value="karanja">Karanja</option>
+                                        <option value="manora">Manora</option>
+                                        <option value="malegaon">Malegaon</option>
+                                        <option value="mangrulpir">Mangrulpir</option>
+                                        <option value="risod">Risod</option>
+                                        <option value="washim">Washim</option>
+                                        <option value="achalpur">Achalpur</option>
+                                        <option value="amravati">Amravati</option>
+                                        <option value="anjangaon">Anjangaon</option>
+                                        <option value="chandur_bazar">Chandur bazar</option>
+                                        <option value="chandur_railway">Chandur Railway</option>
+                                        <option value="chikhaldara">Chikhaldara</option>
+                                        <option value="tiosa">Tiosa</option>
+                                        <option value="daryapur">Daryapur</option>
+                                        <option value="dhamangaon">Dhamangaon</option>
+                                        <option value="dharni">Dharni</option>
+                                        <option value="nandgaon">Nandgaon</option>
+                                        <option value="bhatukali">Bhatukali</option>
+                                        <option value="morshi">Morshi</option>
+                                        <option value="warud">Warud</option>
+                                        <option value="arni">Arni</option>
+                                        <option value="umarkhed">Umarkhed</option>
+                                        <option value="kalamb">Kalamb</option>
+                                        <option value="kelapur">Kelapur</option>
+                                        <option value="ghatanji">Ghatanji</option>
+                                        <option value="zari_jamani">Zari Jamani</option>
+                                        <option value="darwha">Darwha</option>
+                                        <option value="digras">Digras</option>
+                                        <option value="ner">Ner</option>
+                                        <option value="pusad">Pusad</option>
+                                        <option value="babhulgaon">Babhulgaon</option>
+                                        <option value="mahagaon">Mahagaon</option>
+                                        <option value="maregaon">Maregaon</option>
+                                        <option value="yavatmal">Yavatmal</option>
+                                        <option value="ralegaon">Ralegaon</option>
+                                        <option value="wani">Wani</option>
+                                        <option value="arvi">Arvi</option>
+                                        <option value="ashti">Ashti</option>
+                                        <option value="karanja">Karanja</option>
+                                        <option value="deoli">Deoli</option>
+                                        <option value="wardha">Wardha</option>
+                                        <option value="samudrapur">Samudrapur</option>
+                                        <option value="seloo">Seloo</option>
+                                        <option value="hinganghat">Hinganghat</option>
+                                        <option value="umred">Umred</option>
+                                        <option value="kalameshwar">Kalameshwar</option>
+                                        <option value="katol">Katol</option>
+                                        <option value="kamthi">Kamthi</option>
+                                        <option value="kuhi">Kuhi</option>
+                                        <option value="nagpur_rural">Nagpur (Rural)</option>
+                                        <option value="nagpur_urban">Nagpur (Urban)</option>
+                                        <option value="narkhed">Narkhed</option>
+                                        <option value="parshivni">Parshivni</option>
+                                        <option value="bhiwapur">Bhiwapur</option>
+                                        <option value="mouda">Mouda</option>
+                                        <option value="ramtek">Ramtek</option>
+                                        <option value="savner">Savner</option>
+                                        <option value="hingna">Hingna</option>
+                                        <option value="tumsar">Tumsar</option>
+                                        <option value="pawani">Pawani</option>
+                                        <option value="bhandara">Bhandara</option>
+                                        <option value="mohadi">Mohadi</option>
+                                        <option value="lakhni">Lakhni</option>
+                                        <option value="lakhandur">Lakhandur</option>
+                                        <option value="sakoli">Sakoli</option>
+                                        <option value="amgaon">Amgaon</option>
+                                        <option value="goregaon">Goregaon</option>
+                                        <option value="gondia">Gondia</option>
+                                        <option value="tiroda">Tiroda</option>
+                                        <option value="deori">Deori</option>
+                                        <option value="morgaon_arjuni">Morgaon Arjuni</option>
+                                        <option value="sadak_arjuni">Sadak Arjuni</option>
+                                        <option value="salekasa">Salekasa</option>
+                                        <option value="aheri">Aheri</option>
+                                        <option value="armori">Armori</option>
+                                        <option value="etapalli">Etapalli</option>
+                                        <option value="kurkheda">Kurkheda</option>
+                                        <option value="korchi">Korchi</option>
+                                        <option value="gadchiroli">Gadchiroli</option>
+                                        <option value="chamorshi">Chamorshi</option>
+                                        <option value="dhanora">Dhanora</option>
+                                        <option value="bhamragad">Bhamragad</option>
+                                        <option value="mulchera">Mulchera</option>
+                                        <option value="vadasa">Vadasa</option>
+                                        <option value="sironcha">Sironcha</option>
+                                        <option value="korpana">Korpana</option>
+                                        <option value="gondpimpri">Gondpimpri</option>
+                                        <option value="chimur">Chimur</option>
+                                        <option value="chandrapur">Chandrapur</option>
+                                        <option value="jivati">Jivati</option>
+                                        <option value="nagbhid">Nagbhid</option>
+                                        <option value="pombhurna">Pombhurna</option>
+                                        <option value="ballarpur">Ballarpur</option>
+                                        <option value="bramhapuri">Bramhapuri</option>
+                                        <option value="bhadravati">Bhadravati</option>
+                                        <option value="mul">Mul</option>
+                                        <option value="rajura">Rajura</option>
+                                        <option value="warora">Warora</option>
+                                        <option value="savli">Savli</option>
+                                        <option value="sindewahi">Sindewahi</option>
+                                        <option value="ardhapur">Ardhapur</option>
+                                        <option value="umri">Umri</option>
+                                        <option value="kinwat">Kinwat</option>
+                                        <option value="kandhar">Kandhar</option>
+                                        <option value="deglur">Deglur</option>
+                                        <option value="dharmabad">Dharmabad</option>
+                                        <option value="naigaon">Naigaon</option>
+                                        <option value="nanded">Nanded</option>
+                                        <option value="biloli">Biloli</option>
+                                        <option value="bhokar">Bhokar</option>
+                                        <option value="mahur">Mahur</option>
+                                        <option value="mukhed">Mukhed</option>
+                                        <option value="mudkhed">Mudkhed</option>
+                                        <option value="loha">Loha</option>
+                                        <option value="hadgaon">Hadgaon</option>
+                                        <option value="himayat_nagar">Himayat nagar</option>
+                                        <option value="aundha_nagnath">Aundha Nagnath</option>
+                                        <option value="kalamnuri">Kalamnuri</option>
+                                        <option value="wasmat">Wasmat</option>
+                                        <option value="sengaon">Sengaon</option>
+                                        <option value="hingoli">Hingoli</option>
+                                        <option value="gangakhed">Gangakhed</option>
+                                        <option value="jintur">Jintur</option>
+                                        <option value="parbhani">Parbhani</option>
+                                        <option value="pathri">Pathri</option>
+                                        <option value="palam">Palam</option>
+                                        <option value="purna">Purna</option>
+                                        <option value="manwath">Manwath</option>
+                                        <option value="selu">Selu</option>
+                                        <option value="sonpeth">Sonpeth</option>
+                                        <option value="ambad">Ambad</option>
+                                        <option value="ghansawangi">Ghansawangi</option>
+                                        <option value="jafrabad">Jafrabad</option>
+                                        <option value="jalna">Jalna</option>
+                                        <option value="partur">Partur</option>
+                                        <option value="badnapur">Badnapur</option>
+                                        <option value="bhokardan">Bhokardan</option>
+                                        <option value="mantha">Mantha</option>
+                                        <option value="aurangabad">Aurangabad</option>
+                                        <option value="kannad">Kannad</option>
+                                        <option value="khultabad">Khultabad</option>
+                                        <option value="gangapur">Gangapur</option>
+                                        <option value="paithan">Paithan</option>
+                                        <option value="phulambri">Phulambri</option>
+                                        <option value="vaijapur">Vaijapur</option>
+                                        <option value="sillod">Sillod</option>
+                                        <option value="soygaon">Soygaon</option>
+                                        <option value="ambajogai">Ambajogai</option>
+                                        <option value="ashti">Ashti</option>
+                                        <option value="kej">Kej</option>
+                                        <option value="gevrai">Gevrai</option>
+                                        <option value="dharur">Dharur</option>
+                                        <option value="parli">Parli</option>
+                                        <option value="patoda">Patoda</option>
+                                        <option value="beed">Beed</option>
+                                        <option value="majalgaon">Majalgaon</option>
+                                        <option value="wadwani">Wadwani</option>
+                                        <option value="shirur">Shirur</option>
+                                        <option value="ahmedpur">Ahmedpur</option>
+                                        <option value="udgir">Udgir</option>
+                                        <option value="ausa">Ausa</option>
+                                        <option value="chakur">Chakur</option>
+                                        <option value="jalkot">Jalkot</option>
+                                        <option value="devani">Devani</option>
+                                        <option value="nilanga">Nilanga</option>
+                                        <option value="renapur">Renapur</option>
+                                        <option value="latur">Latur</option>
+                                        <option value="shirur_anantpal">Shirur Anantpal</option>
+                                        <option value="umarga">Umarga</option>
+                                        <option value="osmanabad">Osmanabad</option>
+                                        <option value="kalamb">Kalamb</option>
+                                        <option value="tuljapur">Tuljapur</option>
+                                        <option value="paranda">Paranda</option>
+                                        <option value="bhoom">Bhoom</option>
+                                        <option value="lohara">Lohara</option>
+                                        <option value="washi">Washi</option>
+                                        <option value="akkalkot">Akkalkot</option>
+                                        <option value="north_solapur">North Solapur</option>
+                                        <option value="karmala">Karmala</option>
+                                        <option value="south_solapur">South Solapur</option>
+                                        <option value="pandharpur">Pandharpur</option>
+                                        <option value="barshi">Barshi</option>
+                                        <option value="madha">Madha</option>
+                                        <option value="malshiras">Malshiras</option>
+                                        <option value="mohol">Mohol</option>
+                                        <option value="mangalvedhe">Mangalvedhe</option>
+                                        <option value="sangola">Sangola</option>
+                                        <option value="ambegaon">Ambegaon</option>
+                                        <option value="indapur">Indapur</option>
+                                        <option value="khed">Khed</option>
+                                        <option value="junnar">Junnar</option>
+                                        <option value="daund">Daund</option>
+                                        <option value="pune_city">Pune City</option>
+                                        <option value="purandhar">Purandhar</option>
+                                        <option value="baramati">Baramati</option>
+                                        <option value="bhor">Bhor</option>
+                                        <option value="maval">Maval</option>
+                                        <option value="mulshi">Mulshi</option>
+                                        <option value="velaha">Velaha</option>
+                                        <option value="shirur">Shirur</option>
+                                        <option value="haveli">Haveli</option>
+                                        <option value="karad">Karad</option>
+                                        <option value="koregaon">Koregaon</option>
+                                        <option value="khatav">Khatav</option>
+                                        <option value="khandala">Khandala</option>
+                                        <option value="jaoli">Jaoli</option>
+                                        <option value="patan">Patan</option>
+                                        <option value="phaltan">Phaltan</option>
+                                        <option value="mahabaleshwar">Mahabaleshwar</option>
+                                        <option value="maan">Maan</option>
+                                        <option value="wai">Wai</option>
+                                        <option value="satara">Satara</option>
+                                        <option value="atpadi">Atpadi</option>
+                                        <option value="kadegaon">Kadegaon</option>
+                                        <option value="kavatheMahankal">KavatheMahankal</option>
+                                        <option value="khanapur">Khanapur</option>
+                                        <option value="jat">Jat</option>
+                                        <option value="tasgaon">Tasgaon</option>
+                                        <option value="palus">Palus</option>
+                                        <option value="miraj">Miraj</option>
+                                        <option value="walwa">Walwa</option>
+                                        <option value="shirala">Shirala</option>
+                                        <option value="ajra">Ajra</option>
+                                        <option value="karvir">Karvir</option>
+                                        <option value="kagal">Kagal</option>
+                                        <option value="gaganbawada">Gaganbawada</option>
+                                        <option value="gadhinglaj">Gadhinglaj</option>
+                                        <option value="chandgad">Chandgad</option>
+                                        <option value="panhala">Panhala</option>
+                                        <option value="bhudargad">Bhudargad</option>
+                                        <option value="radhanagari">Radhanagari</option>
+                                        <option value="shahuwadi">Shahuwadi</option>
+                                        <option value="shirol">Shirol</option>
+                                        <option value="hatkanangale">Hatkanangale</option>
+                                        <option value="none" selected>--Select a Taluka--</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <label for="village" class="form-label">Village</label>
+                                    <input type="text" class="form-control" id="village" required
+                                        placeholder="Enter Village Name" name="village">
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <label for="survey_no" class="form-label">Survey Number</label>
+                                    <input type="number" class="form-control" id="survey_no" required
+                                        placeholder="Enter Survey No." name="surveyNo">
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <label for="grp_no" class="form-label">Group Number</label>
+                                    <input type="number" class="form-control" id="grp_no" required
+                                        placeholder="Enter Group No." name="groupNo">
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <label for="area" class="form-label">Area of Plot (m<sup>2</sup>)</label>
+                                    <input type="number" class="form-control" id="area" required
+                                        placeholder="Enter Area" name="areaPlot">
+                                </div>
+                                <div class="col-md-3 col-6 mb-4">
+                                    <label for="price" class="form-label">Price of Plot (Rs)</label>
+                                    <input type="number" class="form-control" id="price" required
+                                        placeholder="Enter Selling Price" name="pricePlot">
+                                </div>
+                                <hr>
+                                <h2 class="display-6 text-center mb-3 mt-3">DOCUMENTS</h2>
+                                <p class="text-danger mt-0 pt-0">* (Required Field)</p>
+                                <div class="input mb-3 col-lg-6 col-12">
+                                    <p class="text-dark">Upload a scanned pdf file of 7/12(Utara) Extract
+                                        Document <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="red"
+                                            class="bi bi-asterisk" viewBox="0 1 20 20">
+                                            <path
+                                                d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
+                                        </svg></p>
+                                    <input type="file" class="form-control" id="doc1" accept=".pdf" name="utara"
+                                        required>
+                                </div>
+                                <div class="input mb-3 col-lg-6 col-12">
+                                    <p class="text-dark">Upload a Photo of Land Owner <svg
+                                            xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="red"
+                                            class="bi bi-asterisk" viewBox="0 1 20 20">
+                                            <path
+                                                d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
+                                        </svg></p>
+                                    <input type="file" class="form-control" id="profile_photo" accept=".jpeg,.jpg,.png"
+                                        name="profilephoto" required>
+                                </div>
+                                <div class="input mb-3 col-lg-4 col-12">
+                                    <p class="text-dark">Upload a scanned pdf file of Mutation</p>
+                                    <input type="file" class="form-control" id="doc2" accept=".pdf" name="mutation">
+                                </div>
+                                <div class="input mb-3 col-lg-4 col-12">
+                                    <p class="text-dark">Upload a scanned pdf file of Search Report</p>
+                                    <input type="file" class="form-control" id="doc3" accept=".pdf" name="searchreport">
+                                </div>
+                                <div class="input mb-3 col-lg-4 col-12">
+                                    <p class="text-dark">Upload photos of plot (3) <svg
+                                            xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="red"
+                                            class="bi bi-asterisk" viewBox="0 1 20 20">
+                                            <path
+                                                d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
+                                        </svg></p>
+                                    <input type="file" id="plot_photo" accept=".jpeg,.jpg,.png" class="form-control"
+                                        multiple name="plotimages" required>
+                                </div>
+                                <div class="container-fluid d-flex mb-2">
+                                    <div class="col-12" id="save">
+                                        <button type="submit" class="btn btn-lg" id="SAVE">SAVE</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </main>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <nav id="footer" class="user-select-none">
+            <div class="container mt-0">
+                <div class="row">
+                    <div class="col-md text-center pt-3 text-dark" id="location">
+                        <p>
+                        <h5>LOCATION</h5>
+                        <address>
+                            Pimpri Chinchwad College Of Engineering And Research<br>
+                            <i>Plot No. B, Sector no. 110 Gate, no.1,<br>
+                                Laxmi Nagar, Ravet, Pune, Maharashtra 412101
+                            </i>
+                        </address>
+                        </p>
+                    </div>
+                    <div class="col-md text-center pt-3 text-dark" id="contact">
+                        <p>
+                        <h5>CONTACT INFO</h5>
+                        <i>Email : </i>pocketlandealer@gmail.com<br>
+                        <i>Phone : </i>+91-9756xxxxx
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center pt-2">
+                Terms & Conditions
+            </p>
+        </nav>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            var
+                file_number = 3,
+                $form = $('#seller_form'),
+                $file_upload = $('#plot_photo', $form),
+                $button = $('.submit', $form);
+
+            $button.prop('disabled', 'disabled');
+
+            $file_upload.on('change', function () {
+                var number_of_images = $(this)[0].files.length;
+                if (number_of_images != file_number) {
+                    alert(`You can upload only ${file_number} files.`);
+                    $(this).val('');
+                    $button.prop('disabled', 'disabled');
+                } else {
+                    $button.prop('disabled', false);
+                }
+            });
+        });
+    </script>
+    <script>
+        $("#district").append($("#district option").remove().sort(function (a, b) {
+            var at = $(a).text(), bt = $(b).text();
+            return (at > bt) ? 1 : ((at < bt) ? -1 : 0);
+        }));
+
+        $("#taluka").append($("#taluka option").remove().sort(function (a, b) {
+            var at = $(a).text(), bt = $(b).text();
+            return (at > bt) ? 1 : ((at < bt) ? -1 : 0);
+        }));
+    </script>
+</body>
+
+</html>
