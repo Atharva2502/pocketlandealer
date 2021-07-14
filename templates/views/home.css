@@ -64,7 +64,7 @@ a:hover {
   transition-delay: 3s;
   transition-timing-function: ease-out;
 
-  animation: fadeInAnimation ease 3s;
+  animation: fadeInAnimation ease 6s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -348,7 +348,7 @@ a:hover {
     transition-delay: 3s;
     transition-timing-function: ease-out;
 
-    animation: fadeInAnimation1 ease 3s;
+    animation: fadeInAnimation1 ease 6s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
