@@ -425,8 +425,8 @@ a:hover {
   }
 
   #image2 {
-    position: absolute;
-    top: 200%;
+    position: relative;
+    top: 220%;
   }
 }
 
