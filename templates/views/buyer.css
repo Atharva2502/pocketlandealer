@@ -319,12 +319,15 @@ input {
 
 #sidebarCollapse span:first-of-type {
     transform: rotate(45deg) translate(2px, 2px);
+    background: inherit;
 }
 #sidebarCollapse span:nth-of-type(2) {
     opacity: 0;
+    background: inherit;
 }
 #sidebarCollapse span:last-of-type {
     transform: rotate(-45deg) translate(1px, -1px);
+    background: inherit;
 }
 
 #sidebarCollapse.active span {
@@ -394,7 +397,7 @@ input {
         max-width: 30px;
         max-height: 30px;
         left: 13em;
-        background: white;
+        background: inherit;
     }
     #sidebarCollapse.active span:nth-of-type(2) {
         opacity: 0;
@@ -403,7 +406,7 @@ input {
         max-width: 30px;
         max-height: 30px;
         left: 13em;
-        background: white;
+        background: inherit;
     }
     #sidebarCollapse.active span:last-of-type {
         transform: rotate(-45deg) translate(1px, -1px);
@@ -412,7 +415,7 @@ input {
         max-width: 30px;
         max-height: 30px;
         left: 13em;
-        background: white;
+        background: inherit;
     }
 }
 
