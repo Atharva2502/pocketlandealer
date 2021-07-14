@@ -14,6 +14,13 @@ $(window).on("load", function () {
                     if ($(this).css("opacity") == 1) { $(this).fadeTo(750, 0); }
                 }
             }
+            else if ($(window).width() < 480) {
+                if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+                    if ($(this).css("opacity") == 0) { $(this).fadeTo(10, 1); }
+                } else { //object goes out of view (scrolling up)
+                    if ($(this).css("opacity") == 1) { $(this).fadeTo(10, 0); }
+                }
+            }
             else {
                 if (objectBottom < windowBottom) { //object comes into view (scrolling down)
                     if ($(this).css("opacity") == 0) { $(this).fadeTo(200, 1); }
