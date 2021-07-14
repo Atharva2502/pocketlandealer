@@ -396,10 +396,6 @@ a:hover {
     letter-spacing: 3px;
   }
 
-  #loginbottom {
-    margin-bottom: 1.5em;
-  }
-
   #footer {
     margin-right: 5%;
     margin-left: 5%;
@@ -412,6 +408,6 @@ a:hover {
   }
 
   #login_info {
-    margin-top: 20%;
+    padding-top: 2em;
   }
 }
