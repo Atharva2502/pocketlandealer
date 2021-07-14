@@ -324,9 +324,9 @@ a:hover {
   height: 100%;
   }
 
-  .carousal-item img{
+  .imgs{
     width: 100%;
-    height: 50vh;
+    height: 500px;
   }
 
   #welcome {
@@ -392,7 +392,7 @@ a:hover {
 
   #login1 {
     margin-left: 15%;
-    margin-bottom: 1em;
+    margin-bottom: 3em;
     letter-spacing: 3px;
   }
 
