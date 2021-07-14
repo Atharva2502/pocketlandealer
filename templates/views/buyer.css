@@ -89,7 +89,6 @@ h1 {
     letter-spacing: 0.3em;
     font-family: Roboto, sans-serif;
     font-weight: bold;
-    text-align: center;
 }
 
 h2 {
@@ -319,15 +318,12 @@ input {
 
 #sidebarCollapse span:first-of-type {
     transform: rotate(45deg) translate(2px, 2px);
-    background: inherit;
 }
 #sidebarCollapse span:nth-of-type(2) {
     opacity: 0;
-    background: inherit;
 }
 #sidebarCollapse span:last-of-type {
     transform: rotate(-45deg) translate(1px, -1px);
-    background: inherit;
 }
 
 #sidebarCollapse.active span {
@@ -397,7 +393,7 @@ input {
         max-width: 30px;
         max-height: 30px;
         left: 13em;
-        background: inherit;
+        background: white;
     }
     #sidebarCollapse.active span:nth-of-type(2) {
         opacity: 0;
@@ -406,7 +402,7 @@ input {
         max-width: 30px;
         max-height: 30px;
         left: 13em;
-        background: inherit;
+        background: white;
     }
     #sidebarCollapse.active span:last-of-type {
         transform: rotate(-45deg) translate(1px, -1px);
@@ -415,15 +411,13 @@ input {
         max-width: 30px;
         max-height: 30px;
         left: 13em;
-        background: inherit;
+        background: white;
     }
 }
 
 @media (min-width: 0px) and (max-width: 576px) {
     #form {
     max-width: 100%;
-    margin-left: 1%;
-    margin-right: 1%;
     }
 
     #location {
@@ -445,14 +439,6 @@ input {
 
     #mandatory {
         text-align: center;
-    }
-
-    #website-name {
-        font-size: 1.1em;
-        padding-left: 0.7em;
-        font-family: Noto Serif, sans-serif;
-        font-weight: 500;
-        letter-spacing: 0.05em;
     }
 }
 
