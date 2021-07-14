@@ -324,6 +324,14 @@ a:hover {
   letter-spacing: 0.15em;
 }
 
+#image-2 {
+  display: none;
+}
+
+#image-4 {
+  display: none;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 480px) {
@@ -425,8 +433,11 @@ a:hover {
   }
 
   #image2 {
-    position: relative;
-    top: 220%;
+    display: none;
+  }
+
+  #image4 {
+    display: none;
   }
 }
 
