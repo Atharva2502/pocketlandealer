@@ -393,8 +393,11 @@ a:hover {
 
   #login1 {
     margin-left: 15%;
-    padding-bottom: 3em;
     letter-spacing: 3px;
+  }
+
+  #loginbottom {
+    margin-bottom: 1.5em;
   }
 
   #footer {
