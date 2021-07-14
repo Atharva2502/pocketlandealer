@@ -318,7 +318,7 @@ a:hover {
   letter-spacing: 0.15em;
 }
 
-@media (min-width: 0px) and (max-width: 576px) {
+@media screen and (max-width: 480px) {
   #welcome {
     position: absolute;
     top: 35%;
