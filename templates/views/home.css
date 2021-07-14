@@ -365,8 +365,8 @@ a:hover {
 
   #info {
     position: absolute;
-    top: 83%;
-    left: 8%;
+    top: 85%;
+    left: 6%;
     color: white;
     backdrop-filter: blur(0.5px);
     font-weight: 300;
@@ -393,7 +393,7 @@ a:hover {
 
   #login1 {
     margin-left: 15%;
-    margin-bottom: 3em;
+    padding-bottom: 3em;
     letter-spacing: 3px;
   }
 
