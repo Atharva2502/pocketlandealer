@@ -381,10 +381,6 @@ input[type="search"] {
     #search {
         width: 100%;
     }
-
-    .card {
-        width: 25rem;
-    }
 }
 
 @media (min-width: 0px) and (max-width: 576px) {
@@ -415,10 +411,14 @@ input[type="search"] {
 
     #text {
         font-family: "Berkshire Swash",sans-serif;
-        font-size: 1.5em;
+        font-size: 1em;
         font-weight: 200;
         color: #4c5892;
         text-align: center;
+    }
+
+    .card {
+        width: 20rem;
     }
 }
 
