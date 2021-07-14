@@ -439,6 +439,14 @@ a:hover {
   #image4 {
     display: none;
   }
+
+  #image-2 {
+    display: inline;
+  }
+  
+  #image-4 {
+    display: inline;
+  }
 }
 
 @keyframes fadeInAnimation {
