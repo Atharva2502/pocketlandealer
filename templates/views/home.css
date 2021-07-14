@@ -319,9 +319,14 @@ a:hover {
 }
 
 @media screen and (max-width: 480px) {
+  body {
+  width: 100%;
+  height: 100%;
+  }
+
   .carousal-inner img{
     width: 100%;
-    height: 50%;
+    height: 50vh;
   }
 
   #welcome {
@@ -354,7 +359,7 @@ a:hover {
   #userManual {
     position: absolute;
     top: 4%;
-    left: 45%;
+    left: 40%;
   }
 
   #info {
@@ -386,7 +391,7 @@ a:hover {
   }
 
   #login1 {
-    margin-left: 25%;
+    text-align: center;
     letter-spacing: 3px;
   }
 
