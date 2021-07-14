@@ -364,7 +364,7 @@ input {
     animation-fill-mode: backwards;
 }
 
-@media (min-width: 0px) and (max-width: 768px) {
+@media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;
         transform: rotateY(90deg);
@@ -449,7 +449,7 @@ input {
         letter-spacing: 0.05em;
     }
 
-    #h1 {
+    h1 {
         font-size: 2em;
         letter-spacing: 0.3em;
         font-family: Roboto, sans-serif;
@@ -458,7 +458,7 @@ input {
     }
 
     .form-label {
-        font-size: 0.8em;
+        font-size: 0.9em;
         padding-top: 10px;
     }
 }
