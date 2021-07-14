@@ -404,6 +404,22 @@ input[type="search"] {
     #queries {
         text-align: center;
     }
+
+    #website-name {
+        font-size: 1.1em;
+        padding-left: 0.7em;
+        font-family: Noto Serif, sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+    }
+
+    #text {
+        font-family: "Berkshire Swash",sans-serif;
+        font-size: 1.5em;
+        font-weight: 200;
+        color: #4c5892;
+        text-align: center;
+    }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
