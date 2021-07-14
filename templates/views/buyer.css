@@ -394,7 +394,6 @@ input {
         max-width: 30px;
         max-height: 30px;
         left: 13em;
-        background: white;
     }
     #sidebarCollapse.active span:nth-of-type(2) {
         opacity: 0;
@@ -403,7 +402,6 @@ input {
         max-width: 30px;
         max-height: 30px;
         left: 13em;
-        background: white;
     }
     #sidebarCollapse.active span:last-of-type {
         transform: rotate(-45deg) translate(1px, -1px);
@@ -412,7 +410,6 @@ input {
         max-width: 30px;
         max-height: 30px;
         left: 13em;
-        background: white;
     }
 }
 
@@ -457,6 +454,7 @@ input {
         letter-spacing: 0.3em;
         font-family: Roboto, sans-serif;
         font-weight: 200;
+        text-align: center;
     }
 }
 
