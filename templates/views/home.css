@@ -4,6 +4,10 @@ body {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 30s ease infinite;
+  animation: fadeInAnimation0 ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
 }
 
 @keyframes gradient {
@@ -350,7 +354,7 @@ a:hover {
     animation: fadeInAnimation1 ease 6s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    animation-delay: 3s;
+    animation-delay: 1s;
   }
 
   #welcome:hover {
@@ -443,6 +447,15 @@ a:hover {
       transform: scale(1) translateY(0.5em);
       backdrop-filter: blur(0.7px);
       transition: all 1.5s ease-in;
+      opacity: 1;
+   }
+}
+
+@keyframes fadeInAnimation0 {
+  0% {
+      opacity: 0;
+  }
+  100% {
       opacity: 1;
    }
 }
