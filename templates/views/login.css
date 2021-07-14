@@ -392,6 +392,10 @@ input[type="text"] {
     font-weight: 500;
     letter-spacing: 0.05em;
   }
+
+  #login-section {
+    margin-right: 2em;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
