@@ -84,7 +84,7 @@ h5 {
     letter-spacing: 0.3em;
 }
 
-h1 {
+#h-1 {
     font-size: 2em;
     letter-spacing: 0.3em;
     font-family: Roboto, sans-serif;
@@ -312,7 +312,7 @@ input {
     height: 2px;
     margin: 0 auto;
     display: block;
-    background: #555;
+    background: inherit;
     transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
     transition-delay: 0.2s;
 }
@@ -362,6 +362,10 @@ input {
 #SAVE-animated {
     animation: moveInBottom 5s ease-out;
     animation-fill-mode: backwards;
+}
+
+#h1 {
+    display: none;
 }
 
 @media (max-width: 768px) {
@@ -449,7 +453,12 @@ input {
         letter-spacing: 0.05em;
     }
 
-    h1 {
+    #h-1 {
+        display: none;
+    }
+
+    #h1 {
+        display: block;
         font-size: 2em;
         letter-spacing: 0.3em;
         font-family: Roboto, sans-serif;
