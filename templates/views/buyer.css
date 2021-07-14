@@ -364,7 +364,7 @@ input {
     animation-fill-mode: backwards;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 768px) {
     #sidebar {
         margin-left: -250px;
         transform: rotateY(90deg);
@@ -455,6 +455,11 @@ input {
         font-family: Roboto, sans-serif;
         font-weight: 200;
         text-align: center;
+    }
+
+    .form-label {
+        font-size: 0.8em;
+        padding-top: 10px;
     }
 }
 
