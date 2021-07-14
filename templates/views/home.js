@@ -1,12 +1,4 @@
 $(window).on("load", function () {
-
-    $(document).ready(function () {
-        $("#welcome").css("border", "1px #000000");
-        // $('#div').mouseover(function (e) {
-        //     $("#div").css("border", "1px #00800");
-        // });
-    });
-
     $(window).scroll(function () {
         if ($(window).width() > 1080) {
             var windowBottom = $(this).scrollTop() + $(this).innerHeight();

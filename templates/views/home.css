@@ -64,12 +64,12 @@ a:hover {
   transition-timing-function: ease-out;
 }
 
-#welcome:hover {
+/* #welcome:hover {
   transform: scale(1.3) translateY(1em);
   opacity: 100;
   backdrop-filter: blur(0.7px);
   transition: all 2.5s ease-in;
-}
+} */
 
 #info {
   position: absolute;
@@ -411,4 +411,19 @@ a:hover {
   #login-bottom {
     margin-top: 5em;
   }
+}
+
+#welcome {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
 }
