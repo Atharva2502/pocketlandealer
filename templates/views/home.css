@@ -184,6 +184,7 @@ a:hover {
 #login1 {
   letter-spacing: 3px;
   margin-left: 34.5%;
+  margin-bottom: 2em;
 }
 
 #login1:link,
@@ -364,12 +365,12 @@ a:hover {
 
   #info {
     position: absolute;
-    top: 78%;
+    top: 83%;
     left: 8%;
     color: white;
     backdrop-filter: blur(0.5px);
     font-weight: 300;
-    font-size: 0.6em;
+    font-size: 0.7em;
   }
 
   #para1 {
