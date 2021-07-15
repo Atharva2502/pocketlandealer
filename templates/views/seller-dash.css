@@ -385,6 +385,10 @@ input[type="search"] {
 }
 
 @media (min-width: 0px) and (max-width: 576px) {
+    body {
+        max-width: 100%;
+    }
+
     #location {
     border-right: 0;
     border-bottom: 1px solid black;
