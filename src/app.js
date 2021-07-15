@@ -1026,6 +1026,7 @@ app.post("/send-request", requireLogin, async (req, res) => {
             <meta charset="utf-8">
             <script async src="https://cdn.ampproject.org/v0.js"></script>
             <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+            <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
             <style amp4email-boilerplate>body{visibility:hidden}</style>
             <style amp-custom>
             h1 {
@@ -1044,7 +1045,6 @@ app.post("/send-request", requireLogin, async (req, res) => {
             <p style="text-align: center;font-size: 19px;padding-bottom: 30px;">Given below are the contact details of ${buyer.userdata.firstName}</p>
             <div style="text-align: center; margin-top: 0;">
             </div>
-            <amp-img src="bphoto" width="150" height="150"></amp-img>
             <p style="text-align: center;font-size: 21px"><span style="padding-left: 17px;padding-right: 17px;padding-top: 8px;padding-bottom: 8px;color: white;background-color: black;border-radius: 2px;"><i style="font-weight: 200;">Mobile No</i> | ${buyer.userdata.mobNo}</span></p>
             <p style="text-align: center;font-size: 21px"><span style="padding-left: 17px;padding-right: 17px;padding-top: 8px;padding-bottom: 8px;color: white;background-color: black;border-radius: 2px;"><i style="font-weight: 200;">Email Address</i> | ${buyer.userdata.email}</span></p>
             <form action-xhr="https://pocketlandealer.herokuapp.com/send-docs" method="POST">
@@ -1052,7 +1052,15 @@ app.post("/send-request", requireLogin, async (req, res) => {
             <input type="text" value="${buyer._id}" name="buyerid" style="display: none;">
             <button type="submit" value="${seller._id}" name="send" style="text-decoration: none;color: white;font-size: 25px;background-color: black;padding: 15px;border-radius: 20px;">Send Docs</button>
             </div>
+           	<div submit-success template="submit_success_template"></div>
+  			<div submit-error template="submit_error_template"></div>
             </form>
+            <template type="amp-mustache" id="submit_success_template">
+  					Documents Sent Successfully
+			</template>
+			<template type="amp-mustache" id="submit_error_template">
+  					Oops! An error occured
+			</template>
             <p style="text-align: center;font-size: 18px;padding-top: 30px;">Please do contact on the above details as early as possible</p>
             <p style="text-align: center;font-size: 20px">Thank You !</p>
             <p style="text-align: center;font-size: 15px">@pocketlandealer.com</p>
