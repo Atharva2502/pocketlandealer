@@ -162,6 +162,7 @@ h1 {
 
     .questions {
         font-size: 0.8em;
+        text-align: start;
     }
 }
 
