@@ -1026,13 +1026,14 @@ app.post("/send-request", requireLogin, async (req, res) => {
             <meta charset="utf-8">
             <script async src="https://cdn.ampproject.org/v0.js"></script>
             <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
             <style amp4email-boilerplate>body{visibility:hidden}</style>
             <style amp-custom>
             h1 {
             margin: 1rem;
+            }
+
+            p {
+                font-family: serif;
             }
             </style>
             </head>
