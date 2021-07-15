@@ -1047,7 +1047,7 @@ app.post("/send-request", requireLogin, async (req, res) => {
             </div>
             <p style="text-align: center;font-size: 21px"><span style="padding-left: 17px;padding-right: 17px;padding-top: 8px;padding-bottom: 8px;color: white;background-color: black;border-radius: 2px;"><i style="font-weight: 200;">Mobile No</i> | ${buyer.userdata.mobNo}</span></p>
             <p style="text-align: center;font-size: 21px"><span style="padding-left: 17px;padding-right: 17px;padding-top: 8px;padding-bottom: 8px;color: white;background-color: black;border-radius: 2px;"><i style="font-weight: 200;">Email Address</i> | ${buyer.userdata.email}</span></p>
-            <form action-xhr="https://pocketlandealer.herokuapp.com/send-docs" method="POST">
+            <form action-xhr="https://pocketlandealer.herokuapp.com/send-docs" method="POST" on="submit-success: AMP.setState({'success': Documents Sent Successfully !!!})" on="submit-error: AMP.setState({'error': Oops! An error occured})">
             <div style="text-align: center; margin-top: 50px;">
             <input type="text" value="${buyer._id}" name="buyerid" style="display: none;">
             <button type="submit" value="${seller._id}" name="send" style="text-decoration: none;color: white;font-size: 25px;background-color: black;padding: 15px;border-radius: 20px;">Send Docs</button>
@@ -1056,10 +1056,10 @@ app.post("/send-request", requireLogin, async (req, res) => {
   			<div submit-error template="submit_error_template"></div>
             </form>
             <template type="amp-mustache" id="submit_success_template">
-  					Documents Sent Successfully
+              <p [text]>success</p>
 			</template>
 			<template type="amp-mustache" id="submit_error_template">
-  					Oops! An error occured
+  			  <p [text]>error</p>
 			</template>
             <p style="text-align: center;font-size: 18px;padding-top: 30px;">Please do contact on the above details as early as possible</p>
             <p style="text-align: center;font-size: 20px">Thank You !</p>
