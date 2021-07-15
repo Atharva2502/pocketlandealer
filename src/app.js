@@ -1018,7 +1018,11 @@ app.post("/send-request", requireLogin, async (req, res) => {
             to: fmail,
             subject: "Interested in Buying your Plot",
             html: `
+            <html>
+            <head>
             <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+            </head>
+            <body>
             <div style="background-color: #EDF2FB;padding: 30px;" class="container">
             <h1 style="text-align: center;font-family: 'Roboto';font-size: 50px;font-weight: 400;margin-top: 0;letter-spacing: 2x;">Hello, ${seller.userdata.firstName}</h1>
             <p style="text-align: center;font-size: 18px">This mail has been sent to inform you that <span style="padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;color: white;background-color: black;border-radius: 5px;"><i>${buyer.userdata.firstName} ${buyer.userdata.middleName} ${buyer.userdata.lastName}</i></span> has shown interest in buying your plot</p>
@@ -1037,7 +1041,9 @@ app.post("/send-request", requireLogin, async (req, res) => {
             <p style="text-align: center;font-size: 18px;padding-top: 40px;">Please do contact on the above details as early as possible</p>
             <p style="text-align: center;font-family: 'Roboto';font-size: 20px">Thank You !</p>
             <p style="text-align: center;font-size: 15px";>@pocketlandealer.com</p>
-            </div>`
+            </div>
+            </body>
+            </html>`
         };
 
         // mail sending step 3
