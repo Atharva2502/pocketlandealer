@@ -1032,6 +1032,7 @@ app.post("/send-request", requireLogin, async (req, res) => {
             <p style="text-align: center;font-family: 'Roboto';font-size: 21px"><span style="padding-left: 17px;padding-right: 17px;padding-top: 8px;padding-bottom: 8px;color: white;background-color: black;border-radius: 2px;"><i style="font-weight: 200;">Email Address</i> | ${buyer.userdata.email}</span></p>
             <form action="https://pocketlandealer.herokuapp.com/send-docs" method="POST">
             <div style="text-align: center;">
+            <input type="text" value="${buyer._id} name="buyerid" style="display: none;">
             <button type="submit" value="${seller._id}" name="send" style="text-decoration: none;color: white;font-size: 25px;background-color: black;padding: 15px;border-radius: 20px;font-family: Roboto;">Send Docs</button>
             </div>
             </form>
@@ -1081,7 +1082,7 @@ app.post("/send-docs", async (req, res) => {
         let mutationname = seller.userdata.userDocs.mutation.filename
         let searchreportname = seller.userdata.userDocs.searchreport.filename
 
-        const bid = req.session.userid
+        const bid = req.body.buyerid
         const buyer = await Buyer.findOne({ userid: { id: `${bid}` } })
         const bmail = buyer.userdata.email
 
