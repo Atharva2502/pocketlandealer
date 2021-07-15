@@ -482,6 +482,27 @@ input {
         font-size: 0.95em;
         padding-top: 10px;
     }
+
+    #about-us {
+        border-radius: 0.4em;
+        background-color: #7386D5;
+        color: white;
+        box-shadow: 0 5px 15px -5px #00000070;
+    }
+    
+    #home {
+        border-radius: 0.4em;
+        background-color: #7386D5;
+        color: white;
+        box-shadow: 0 5px 15px -5px #00000070;
+    }
+    
+    #queries {
+        border-radius: 0.4em;
+        background-color: #7386D5;
+        color: white;
+        box-shadow: 0 5px 15px -5px #00000070;
+    }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
