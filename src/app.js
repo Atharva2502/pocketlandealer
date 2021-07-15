@@ -1018,7 +1018,7 @@ app.post("/send-request", requireLogin, async (req, res) => {
             to: fmail,
             subject: "Interested in Buying your Plot",
             html: `
-            <html amp4email data-css-strict>
+            <html ⚡4email data-css-strict>
             <head>
             <meta charset="utf-8">
             <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
