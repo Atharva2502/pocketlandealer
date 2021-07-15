@@ -1035,7 +1035,7 @@ app.post("/send-request", requireLogin, async (req, res) => {
             <form action-xhr="https://pocketlandealer.herokuapp.com/send-docs" method="POST">
             <div style="text-align: center;">
             <input type="text" value="${buyer._id}" name="buyerid" style="display: none;">
-            <input type="submit" value="${seller._id}" name="send" style="text-decoration: none;color: white;font-size: 25px;background-color: black;padding: 15px;border-radius: 20px;font-family: Roboto;">Send Docs</input>
+            <button type="submit" value="${seller._id}" name="send" style="text-decoration: none;color: white;font-size: 25px;background-color: black;padding: 15px;border-radius: 20px;font-family: Roboto;">Send Docs</button>
             </div>
             </form>
             <p style="text-align: center;font-size: 18px;padding-top: 40px;">Please do contact on the above details as early as possible</p>
