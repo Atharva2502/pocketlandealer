@@ -1017,7 +1017,9 @@ app.post("/send-request", requireLogin, async (req, res) => {
             from: "pocketlandealer@gmail.com",
             to: fmail,
             subject: "Interested in Buying your Plot",
-            html: `<div style="background-color: #EDF2FB;padding: 30px;" class="container">
+            html: `
+            <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+            <div style="background-color: #EDF2FB;padding: 30px;" class="container">
             <h1 style="text-align: center;font-family: 'Roboto';font-size: 50px;font-weight: 400;margin-top: 0;letter-spacing: 2x;">Hello, ${seller.userdata.firstName}</h1>
             <p style="text-align: center;font-size: 18px">This mail has been sent to inform you that <span style="padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;color: white;background-color: black;border-radius: 5px;"><i>${buyer.userdata.firstName} ${buyer.userdata.middleName} ${buyer.userdata.lastName}</i></span> has shown interest in buying your plot</p>
             <p style="text-align: center;font-size: 19px;padding-bottom: 30px;">Given below are the contact details of ${buyer.userdata.firstName}</p>
@@ -1029,7 +1031,7 @@ app.post("/send-request", requireLogin, async (req, res) => {
             <form action="https://pocketlandealer.herokuapp.com/send-docs" method="POST">
             <div style="text-align: center;">
             <input type="text" value="${buyer._id}" name="buyerid" style="display: none;">
-            <button type="submit" value="${seller._id}" name="send" style="text-decoration: none;color: white;font-size: 25px;background-color: black;padding: 15px;border-radius: 20px;font-family: Roboto;">Send Docs</button>
+            <input type="submit" value="${seller._id}" name="send" style="text-decoration: none;color: white;font-size: 25px;background-color: black;padding: 15px;border-radius: 20px;font-family: Roboto;">Send Docs</input>
             </div>
             </form>
             <p style="text-align: center;font-size: 18px;padding-top: 40px;">Please do contact on the above details as early as possible</p>
