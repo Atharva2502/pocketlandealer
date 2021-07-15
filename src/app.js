@@ -1083,7 +1083,7 @@ app.post("/send-docs", async (req, res) => {
         let searchreportname = seller.userdata.userDocs.searchreport.filename
 
         const bid = req.body.buyerid
-        const buyer = await Buyer.findOne({ userid: { id: `${bid}` } })
+        const buyer = await Buyer.findOne({ userid: { id: bid } })
         const bmail = buyer.userdata.email
 
         // mail sending step 1 --
