@@ -1018,30 +1018,45 @@ app.post("/send-request", requireLogin, async (req, res) => {
             to: fmail,
             subject: "Interested in Buying your Plot",
             html: `
-            <html>
+            // <html>
+            // <head>
+            // <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+            // </head>
+            // <body>
+            // <div style="background-color: #EDF2FB;padding: 30px;" class="container">
+            // <h1 style="text-align: center;font-family: 'Roboto';font-size: 50px;font-weight: 400;margin-top: 0;letter-spacing: 2x;">Hello, ${seller.userdata.firstName}</h1>
+            // <p style="text-align: center;font-size: 18px">This mail has been sent to inform you that <span style="padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;color: white;background-color: black;border-radius: 5px;"><i>${buyer.userdata.firstName} ${buyer.userdata.middleName} ${buyer.userdata.lastName}</i></span> has shown interest in buying your plot</p>
+            // <p style="text-align: center;font-size: 19px;padding-bottom: 30px;">Given below are the contact details of ${buyer.userdata.firstName}</p>
+            // <div style="text-align: center; margin-top: 0;">
+            // <img src="${buyer.userdata.userDocs.profilepic.url}" style="border-radius: 50%; width: 150px; height: 150px; border-width: 2px; border-style: solid; border-color: #09aacc;">
+            // </div>
+            // <p style="text-align: center;font-family: 'Roboto';font-size: 21px"><span style="padding-left: 17px;padding-right: 17px;padding-top: 8px;padding-bottom: 8px;color: white;background-color: black;border-radius: 2px;"><i style="font-weight: 200;">Mobile No</i> | ${buyer.userdata.mobNo}</span></p>
+            // <p style="text-align: center;font-family: 'Roboto';font-size: 21px"><span style="padding-left: 17px;padding-right: 17px;padding-top: 8px;padding-bottom: 8px;color: white;background-color: black;border-radius: 2px;"><i style="font-weight: 200;">Email Address</i> | ${buyer.userdata.email}</span></p>
+            // <form action-xhr="https://pocketlandealer.herokuapp.com/send-docs" method="POST">
+            // <div style="text-align: center;">
+            // <input type="text" value="${buyer._id}" name="buyerid" style="display: none;">
+            // <button type="submit" value="${seller._id}" name="send" style="text-decoration: none;color: white;font-size: 25px;background-color: black;padding: 15px;border-radius: 20px;font-family: Roboto;">Send Docs</button>
+            // </div>
+            // </form>
+            // <p style="text-align: center;font-size: 18px;padding-top: 40px;">Please do contact on the above details as early as possible</p>
+            // <p style="text-align: center;font-family: 'Roboto';font-size: 20px">Thank You !</p>
+            // <p style="text-align: center;font-size: 15px";>@pocketlandealer.com</p>
+            // </div>
+            // </body>
+            // </html>
+            <html ⚡4email data-css-strict>
             <head>
-            <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+            <meta charset="utf-8">
+            <script async src="https://cdn.ampproject.org/v0.js"></script>
+            <style amp4email-boilerplate>body{visibility:hidden}</style>
+            <style amp-custom>
+            h1 {
+            margin: 1rem;
+            }   
+            </style>
             </head>
             <body>
-            <div style="background-color: #EDF2FB;padding: 30px;" class="container">
-            <h1 style="text-align: center;font-family: 'Roboto';font-size: 50px;font-weight: 400;margin-top: 0;letter-spacing: 2x;">Hello, ${seller.userdata.firstName}</h1>
-            <p style="text-align: center;font-size: 18px">This mail has been sent to inform you that <span style="padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;color: white;background-color: black;border-radius: 5px;"><i>${buyer.userdata.firstName} ${buyer.userdata.middleName} ${buyer.userdata.lastName}</i></span> has shown interest in buying your plot</p>
-            <p style="text-align: center;font-size: 19px;padding-bottom: 30px;">Given below are the contact details of ${buyer.userdata.firstName}</p>
-            <div style="text-align: center; margin-top: 0;">
-            <img src="${buyer.userdata.userDocs.profilepic.url}" style="border-radius: 50%; width: 150px; height: 150px; border-width: 2px; border-style: solid; border-color: #09aacc;">
-            </div>
-            <p style="text-align: center;font-family: 'Roboto';font-size: 21px"><span style="padding-left: 17px;padding-right: 17px;padding-top: 8px;padding-bottom: 8px;color: white;background-color: black;border-radius: 2px;"><i style="font-weight: 200;">Mobile No</i> | ${buyer.userdata.mobNo}</span></p>
-            <p style="text-align: center;font-family: 'Roboto';font-size: 21px"><span style="padding-left: 17px;padding-right: 17px;padding-top: 8px;padding-bottom: 8px;color: white;background-color: black;border-radius: 2px;"><i style="font-weight: 200;">Email Address</i> | ${buyer.userdata.email}</span></p>
-            <form action-xhr="https://pocketlandealer.herokuapp.com/send-docs" method="POST">
-            <div style="text-align: center;">
-            <input type="text" value="${buyer._id}" name="buyerid" style="display: none;">
-            <button type="submit" value="${seller._id}" name="send" style="text-decoration: none;color: white;font-size: 25px;background-color: black;padding: 15px;border-radius: 20px;font-family: Roboto;">Send Docs</button>
-            </div>
-            </form>
-            <p style="text-align: center;font-size: 18px;padding-top: 40px;">Please do contact on the above details as early as possible</p>
-            <p style="text-align: center;font-family: 'Roboto';font-size: 20px">Thank You !</p>
-            <p style="text-align: center;font-size: 15px";>@pocketlandealer.com</p>
-            </div>
+            <h1>Hello, I am an AMP EMAIL!</h1>
             </body>
             </html>`
         };
