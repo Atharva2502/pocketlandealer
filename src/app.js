@@ -56,12 +56,12 @@ const app = express();
 
 // Session and Flash
 
-const URL = `${process.env.DB_URL}test` || "mongodb://localhost:27017/test"
-const SECRET = process.env.SECRET || "notagoodsecret"
+// const URL = `${process.env.DB_URL}test` || "mongodb://localhost:27017/test"
+// const SECRET = process.env.SECRET || "notagoodsecret"
 
 const sessionConfig = {
     name: 'session',
-    secret: SECRET,
+    secret: "notagoodsecret",
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -71,8 +71,8 @@ const sessionConfig = {
         maxAge: 1000 * 60 * 60 * 3
     },
     store: MongoStore.create({
-        mongoUrl: URL,
-        secret: SECRET,
+        mongoUrl: "mongodb://localhost:27017/test",
+        secret: "notagoodsecret",
         touchAfter: 60 * 60 * 24
     })
 }
