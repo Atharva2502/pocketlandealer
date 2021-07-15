@@ -1017,7 +1017,8 @@ app.post("/send-request", requireLogin, async (req, res) => {
             from: "pocketlandealer@gmail.com",
             to: fmail,
             subject: "Interested in Buying your Plot",
-            html: `
+            html: "For clients that do not support AMP4EMAIL or amp content is not valid",
+            amp: `<!doctype html>
             <html ⚡4email data-css-strict>
             <head>
             <meta charset="utf-8">
@@ -1026,7 +1027,7 @@ app.post("/send-request", requireLogin, async (req, res) => {
             <style amp-custom>
             h1 {
             margin: 1rem;
-            }   
+            }
             </style>
             </head>
             <body>
