@@ -1018,7 +1018,7 @@ app.post("/send-request", requireLogin, async (req, res) => {
             to: fmail,
             subject: "Interested in Buying your Plot",
             html: `
-            <html ⚡4email data-css-strict>
+            <html amp4email data-css-strict>
             <head>
             <meta charset="utf-8">
             <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -1039,12 +1039,12 @@ app.post("/send-request", requireLogin, async (req, res) => {
             </div>
             <p style="text-align: center;font-family: 'Roboto';font-size: 21px"><span style="padding-left: 17px;padding-right: 17px;padding-top: 8px;padding-bottom: 8px;color: white;background-color: black;border-radius: 2px;"><i style="font-weight: 200;">Mobile No</i> | ${buyer.userdata.mobNo}</span></p>
             <p style="text-align: center;font-family: 'Roboto';font-size: 21px"><span style="padding-left: 17px;padding-right: 17px;padding-top: 8px;padding-bottom: 8px;color: white;background-color: black;border-radius: 2px;"><i style="font-weight: 200;">Email Address</i> | ${buyer.userdata.email}</span></p>
-            <form action-xhr="https://pocketlandealer.herokuapp.com/send-docs" method="POST">
+            <amp-form action-xhr="https://pocketlandealer.herokuapp.com/send-docs" method="POST">
             <div style="text-align: center;">
             <input type="text" value="${buyer._id}" name="buyerid" style="display: none;">
             <button type="submit" value="${seller._id}" name="send" style="text-decoration: none;color: white;font-size: 25px;background-color: black;padding: 15px;border-radius: 20px;font-family: Roboto;">Send Docs</button>
             </div>
-            </form>
+            </amp-form>
             <p style="text-align: center;font-size: 18px;padding-top: 40px;">Please do contact on the above details as early as possible</p>
             <p style="text-align: center;font-family: 'Roboto';font-size: 20px">Thank You !</p>
             <p style="text-align: center;font-size: 15px";>@pocketlandealer.com</p>
