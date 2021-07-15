@@ -1140,7 +1140,7 @@ app.post("/send-docs", async (req, res) => {
 
     } catch (error) {
         req.session.destroy()
-        res.redirect("/")
+        res.redirect("/login")
     }
 })
 
