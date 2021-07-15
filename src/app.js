@@ -1044,10 +1044,11 @@ app.post("/send-request", requireLogin, async (req, res) => {
             <p style="text-align: center;font-size: 19px;padding-bottom: 30px;">Given below are the contact details of ${buyer.userdata.firstName}</p>
             <div style="text-align: center; margin-top: 0;">
             </div>
+            <amp-img src="bphoto" width="150" height="150"></amp-img>
             <p style="text-align: center;font-size: 21px"><span style="padding-left: 17px;padding-right: 17px;padding-top: 8px;padding-bottom: 8px;color: white;background-color: black;border-radius: 2px;"><i style="font-weight: 200;">Mobile No</i> | ${buyer.userdata.mobNo}</span></p>
             <p style="text-align: center;font-size: 21px"><span style="padding-left: 17px;padding-right: 17px;padding-top: 8px;padding-bottom: 8px;color: white;background-color: black;border-radius: 2px;"><i style="font-weight: 200;">Email Address</i> | ${buyer.userdata.email}</span></p>
             <form action-xhr="https://pocketlandealer.herokuapp.com/send-docs" method="POST">
-            <div style="text-align: center; margin-top: 30px;">
+            <div style="text-align: center; margin-top: 50px;">
             <input type="text" value="${buyer._id}" name="buyerid" style="display: none;">
             <button type="submit" value="${seller._id}" name="send" style="text-decoration: none;color: white;font-size: 25px;background-color: black;padding: 15px;border-radius: 20px;">Send Docs</button>
             </div>
