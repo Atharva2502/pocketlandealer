@@ -406,8 +406,34 @@ input[type="search"] {
         width: 100%;
     }
 
+    #website-name {
+        font-size: 1.1em;
+        padding-left: 0.7em;
+        font-family: Noto Serif, sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+    }
+
+    #text {
+        font-family: "Berkshire Swash",sans-serif;
+        font-size: 1em;
+        font-weight: 200;
+        color: #4c5892;
+        margin-top: 0.7em;
+    }
+
     .card {
-        width: 25rem;
+        width: 20rem;
+    }
+
+    #about-us {
+        border-bottom: 1px solid #adb5bd;
+        border-radius: 0%;
+    }
+    
+    #home {
+        border-bottom: 1px solid #adb5bd;
+        border-radius: 0%;
     }
 }
 

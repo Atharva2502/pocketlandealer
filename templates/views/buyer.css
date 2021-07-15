@@ -463,6 +463,16 @@ input {
         font-size: 0.95em;
         padding-top: 10px;
     }
+
+    #about-us {
+        border-bottom: 1px solid #adb5bd;
+        border-radius: 0%;
+    }
+    
+    #home {
+        border-bottom: 1px solid #adb5bd;
+        border-radius: 0%;
+    }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {

@@ -396,6 +396,16 @@ input[type="text"] {
   #login-section {
     margin-right: 2em;
   }
+
+  #about-us {
+    border-bottom: 1px solid #adb5bd;
+    border-radius: 0%;
+  }
+
+  #home {
+    border-bottom: 1px solid #adb5bd;
+    border-radius: 0%;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {

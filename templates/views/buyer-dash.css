@@ -420,6 +420,16 @@ input[type="search"] {
     .card {
         width: 20rem;
     }
+
+    #about-us {
+        border-bottom: 1px solid #adb5bd;
+        border-radius: 0%;
+    }
+    
+    #home {
+        border-bottom: 1px solid #adb5bd;
+        border-radius: 0%;
+    }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
