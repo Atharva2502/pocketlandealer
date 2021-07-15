@@ -485,10 +485,16 @@ input {
 
     #about-us {
         border-bottom: 1px solid #adb5bd;
+        border-radius: 0%;
     }
     
     #home {
         border-bottom: 1px solid #adb5bd;
+        border-radius: 0%;
+    }
+
+    #owner {
+        font-size: 0.9em;
     }
 }
 
