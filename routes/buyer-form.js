@@ -52,8 +52,6 @@ router.post("/buyer-form", requireLogin, pupload, (req, res, next) => {
             else {
                 const id = req.session.userid
                 const buyer = await buyerRegister.update({ _id: id }, { $push: { "formFilled": "true" } })
-                console.log(buyer)
-                console.log("Form-Filled")
                 res.redirect("/buyer-dashboard")
             }
         })

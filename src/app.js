@@ -61,7 +61,7 @@ const SECRET = process.env.SECRET || "notagoodsecret"
 
 const sessionConfig = {
     name: 'session',
-    secret: "notagoodsecret",
+    secret: SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -71,8 +71,8 @@ const sessionConfig = {
         maxAge: 1000 * 60 * 60 * 3
     },
     store: MongoStore.create({
-        mongoUrl: "mongodb://localhost:27017/test",
-        secret: "notagoodsecret",
+        mongoUrl: URL,
+        secret: SECRET,
         touchAfter: 60 * 60 * 24
     })
 }
@@ -161,10 +161,6 @@ app.get("/check", async (req, res) => {
         const id = req.session.userid
         const user = await buyerRegister.findOne({ _id: id })
         const formFilled = user.formFilled[0];
-
-        console.log(id)
-        console.log(user)
-        console.log(formFilled)
 
         if (formFilled === "true") {
             req.flash("updates", "Successfully Logged In !!!")
@@ -1030,7 +1026,7 @@ app.post("/send-request", requireLogin, async (req, res) => {
             </div>
             <p style="text-align: center;font-family: 'Roboto';font-size: 21px"><span style="padding-left: 17px;padding-right: 17px;padding-top: 8px;padding-bottom: 8px;color: white;background-color: black;border-radius: 2px;"><i style="font-weight: 200;">Mobile No</i> | ${buyer.userdata.mobNo}</span></p>
             <p style="text-align: center;font-family: 'Roboto';font-size: 21px"><span style="padding-left: 17px;padding-right: 17px;padding-top: 8px;padding-bottom: 8px;color: white;background-color: black;border-radius: 2px;"><i style="font-weight: 200;">Email Address</i> | ${buyer.userdata.email}</span></p>
-            <form action="http://localhost:3000/send-docs" method="POST">
+            <form action="https://pocketlandealer.herokuapp.com/send-docs" method="POST">
             <div style="text-align: center;">
             <input type="text" value="${buyer._id}" name="buyerid" style="display: none;">
             <button type="submit" value="${seller._id}" name="send" style="text-decoration: none;color: white;font-size: 25px;background-color: black;padding: 15px;border-radius: 20px;font-family: Roboto;">Send Docs</button>
@@ -1082,9 +1078,9 @@ app.post("/send-docs", async (req, res) => {
         let mutationname = seller.userdata.userDocs.mutation.filename
         let searchreportname = seller.userdata.userDocs.searchreport.filename
 
-        const bid = req.body.buyerid
-        const buyer = await Buyer.findOne({ userid: { id: bid } })
-        const bmail = buyer.userdata.email
+        const buyerid = req.body.buyerid
+        const buyerdata = await Buyer.findOne({ _id: `${buyerid}` })
+        const buyermail = buyerdata.userdata.email
 
         // mail sending step 1 --
 
@@ -1100,10 +1096,10 @@ app.post("/send-docs", async (req, res) => {
 
         var mailoptions = {
             from: "pocketlandealer@gmail.com",
-            to: bmail,
-            subject: "Interested in Buying your Plot",
+            to: buyermail,
+            subject: "Documents of the plot you requested",
             html: `<div style="background-color: #EDF2FB;padding: 30px;" class="container">
-            <h1 style="text-align: center;font-family: 'Roboto';font-size: 50px;font-weight: 400;margin-top: 0;letter-spacing: 2x;">Hello, ${buyer.userdata.firstName}</h1>
+            <h1 style="text-align: center;font-family: 'Roboto';font-size: 50px;font-weight: 400;margin-top: 0;letter-spacing: 2x;">Hello, ${buyerdata.userdata.firstName}</h1>
             <p style="text-align: center;font-size: 18px">This is mail from ${seller.userdata.firstName} ${seller.userdata.middleName} ${seller.userdata.lastName} via pocketlandealer@gmail.com as you have shown interest in the plot so in response to your request, here I have atttached all the necessary documents</p>
             <div style="text-align: center;">
             <p style="text-align: center;font-size: 18px;padding-top: 10px;">So please verify them and let me know about your further plan</p>
@@ -1133,14 +1129,12 @@ app.post("/send-docs", async (req, res) => {
                 await Seller.updateOne({ _id: tsid }, { $set: { viewcount: viewcount } });
 
                 console.log("email sent");
-
-                req.session.destroy()
                 res.redirect("/");
             }
         });
 
     } catch (error) {
-        req.session.destroy()
+        console.log(error.message)
         res.redirect("/login")
     }
 })
