@@ -140,6 +140,29 @@ h1 {
     #svg {
         height: 10em;
     }
+
+    #website-name {
+        font-size: 1.1em;
+        padding-left: 0.7em;
+        font-family: Noto Serif, sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+    }
+
+    h1 {
+        color: #7386D5;
+        letter-spacing: 0.5rem;
+        font-family: 'PT Serif',sans-serif;
+        font-size: 2em;
+    }
+
+    .para {
+        font-size: 1.5em;
+    }
+
+    .questions {
+        font-size: 1.2em;
+    }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
