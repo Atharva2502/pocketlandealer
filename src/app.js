@@ -276,7 +276,7 @@ app.get("/facebook-login", passport.authenticate("facebook", { scope: ["email"] 
 
 app.get("/flogin", passport.authenticate("facebook", { failureFlash: "Invalid Credentials!!!", failureRedirect: "/login" }), async (req, res) => {
     if (req.session.firsttimeuser === true) {
-        const email = req.user.email
+        const email = req.user.emails[0].value
 
         if (req.session.seller === true) {
             const seller = await sellerRegister.findOne({ email: email })
@@ -317,7 +317,7 @@ app.get("/flogin", passport.authenticate("facebook", { failureFlash: "Invalid Cr
         }
     }
     else if (!req.session.firsttimeuser) {
-        const email = req.user.email
+        const email = req.user.emails[0].value
 
         if (req.session.seller === true) {
             const seller = await sellerRegister.findOne({ email: email })
