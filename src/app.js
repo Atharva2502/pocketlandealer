@@ -182,7 +182,7 @@ app.get("/check", async (req, res) => {
 
 app.get("/google-login", passport.authenticate("google", { scope: ["profile", "email"] }));
 
-app.get("/glogin", passport.authenticate("google", { successRedirect: "/", failureFlash: "Invalid Credentials!!!", failureRedirect: "/login" }), async (req, res) => {
+app.get("/glogin", passport.authenticate("google", { failureFlash: "Invalid Credentials!!!", failureRedirect: "/login" }), async (req, res) => {
     if (req.session.firsttimeuser === true) {
         const email = req.user.email
 
@@ -274,7 +274,7 @@ app.get("/glogin", passport.authenticate("google", { successRedirect: "/", failu
 
 app.get("/facebook-login", passport.authenticate("facebook", { scope: ["email"] }));
 
-app.get("/flogin", passport.authenticate("facebook", { successRedirect: "/", failureFlash: "Invalid Credentials!!!", failureRedirect: "/login" }), async (req, res) => {
+app.get("/flogin", passport.authenticate("facebook", { failureFlash: "Invalid Credentials!!!", failureRedirect: "/login" }), async (req, res) => {
     if (req.session.firsttimeuser === true) {
         const email = req.user.emails[0].value
 
