@@ -26,6 +26,7 @@ const puppeteer = require("puppeteer");
 var validator = require('aadhaar-validator')
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet');
+const alert = require("alerts")
 
 require("./db/conn");
 const app = express();
@@ -1033,7 +1034,7 @@ app.post("/send-request", requireLogin, async (req, res) => {
             </div>
             </form>
             <p style="text-align: center;font-size: 16px;padding-top: 40px;">If you are viewing this email on the Gmail app on mobile, you will see <b>"Forms are disabled in Gmail"</b></p>
-            <p style="text-align: center;font-size: 16px;padding-top: 40px;">Click <a href="https://www.google.com/gmail/">here</a> to view this email on Browser</p>
+            <p style="text-align: center;font-size: 16px;">Click <a href="https://www.google.com/gmail/">here</a> to view this email on Browser</p>
             <p style="text-align: center;font-size: 18px;padding-top: 40px;">Please do contact on the above details as early as possible</p>
             <p style="text-align: center;font-family: 'Roboto';font-size: 20px">Thank You !</p>
             <p style="text-align: center;font-size: 15px";>@pocketlandealer.com</p>
@@ -1102,7 +1103,7 @@ app.post("/send-docs", async (req, res) => {
             subject: "Documents of the plot you requested",
             html: `<div style="background-color: #EDF2FB;padding: 30px;" class="container">
             <h1 style="text-align: center;font-family: 'Roboto';font-size: 50px;font-weight: 400;margin-top: 0;letter-spacing: 2x;">Hello, ${buyerdata.userdata.firstName}</h1>
-            <p style="text-align: center;font-size: 18px">This is mail from ${seller.userdata.firstName} ${seller.userdata.middleName} ${seller.userdata.lastName} via pocketlandealer@gmail.com as you have shown interest in the plot so in response to your request, here I have atttached all the necessary documents</p>
+            <p style="text-align: center;font-size: 18px">This is a mail from ${seller.userdata.firstName} ${seller.userdata.middleName} ${seller.userdata.lastName} via pocketlandealer@gmail.com as you have shown interest in the plot so in response to your request, here I have atttached all the necessary documents</p>
             <div style="text-align: center;">
             <p style="text-align: center;font-size: 18px;padding-top: 10px;">So please verify them and let me know about your further plan</p>
             <p style="text-align: center;font-family: 'Roboto';font-size: 20px">Thank You !</p>
@@ -1125,13 +1126,13 @@ app.post("/send-docs", async (req, res) => {
         transporter.sendMail(mailoptions, async (err, info) => {
             if (err) {
                 console.log("error occured " + err);
+                alert("Error sending documents")
             }
             else {
                 let viewcount = seller.viewcount + 1
                 await Seller.updateOne({ _id: tsid }, { $set: { viewcount: viewcount } });
-
                 console.log("email sent");
-                res.redirect("/");
+                alert("Documents sent successfully")
             }
         });
 
