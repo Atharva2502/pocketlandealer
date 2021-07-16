@@ -26,7 +26,6 @@ const puppeteer = require("puppeteer");
 var validator = require('aadhaar-validator')
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet');
-const alert = require("alerts")
 
 require("./db/conn");
 const app = express();
@@ -1126,13 +1125,16 @@ app.post("/send-docs", async (req, res) => {
         transporter.sendMail(mailoptions, async (err, info) => {
             if (err) {
                 console.log("error occured " + err);
-                alert("Error sending documents")
+                req.flash("loggedIn", "Error sending documents")
+                res.redirect("/login")
             }
             else {
                 let viewcount = seller.viewcount + 1
                 await Seller.updateOne({ _id: tsid }, { $set: { viewcount: viewcount } });
                 console.log("email sent");
-                alert("Documents sent successfully")
+
+                req.flash("success", "Documents Sent successfully !!!")
+                res.redirect("/login")
             }
         });
 
