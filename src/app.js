@@ -269,6 +269,98 @@ app.get("/glogin", passport.authenticate("google", { failureFlash: "Invalid Cred
     }
 })
 
+// Facebook Login
+
+app.get("/facebook-login", passport.authenticate("facebook", { scope: ["email"] }));
+
+app.get("/flogin", passport.authenticate("facebook", { failureFlash: "Invalid Credentials!!!", failureRedirect: "/login" }), async (req, res) => {
+    if (req.session.firsttimeuser === true) {
+        const email = req.user.email
+
+        if (req.session.seller === true) {
+            const seller = await sellerRegister.findOne({ email: email })
+
+            if (seller) {
+                req.session.userid = seller._id
+                req.session.username = seller.userName;
+                req.session.glogin = true
+
+                req.flash("updates", "Successfully Logged In !!!")
+                res.redirect("/seller-form");
+                console.log("User logged in")
+            }
+            else {
+                req.flash("loggedIn", "The email id entered is not registered");
+                res.status(201).redirect("login");
+            }
+        }
+        else if (req.session.buyer === true) {
+            const buyer = await buyerRegister.findOne({ email: email })
+
+            if (buyer) {
+                req.session.userid = buyer._id
+                req.session.username = buyer.userName;
+                req.session.glogin = true
+
+                req.flash("updates", "Successfully Logged In !!!")
+                res.redirect("/buyer-form");
+                console.log("User logged in")
+            }
+            else {
+                req.flash("loggedIn", "The email id entered is not registered");
+                res.status(201).redirect("login");
+            }
+        }
+        else {
+            res.redirect("/home")
+        }
+    }
+    else if (!req.session.firsttimeuser) {
+        const email = req.user.email
+
+        if (req.session.seller === true) {
+            const seller = await sellerRegister.findOne({ email: email })
+
+            if (seller) {
+                req.session.userid = seller._id
+                req.session.username = seller.userName;
+                req.session.glogin = true
+
+                req.flash("updates", "Successfully Logged In !!!")
+                res.redirect("/seller-dashboard");
+                console.log("User logged in")
+            }
+            else {
+                req.flash("loggedIn", "The email id entered is not registered");
+                res.status(201).redirect("login");
+            }
+        }
+        else if (req.session.buyer === true) {
+            const buyer = await buyerRegister.findOne({ email: email })
+
+            if (buyer) {
+                req.session.userid = buyer._id
+                req.session.username = buyer.userName;
+                req.session.glogin = true
+
+                req.flash("updates", "Successfully Logged In !!!")
+                res.redirect("/check");
+                console.log("User logged in")
+            }
+            else {
+                req.flash("loggedIn", "The email id entered is not registered");
+                res.status(201).redirect("login");
+            }
+        }
+        else {
+            res.redirect("/home")
+        }
+    }
+    else {
+        res.redirect("/home")
+    }
+})
+
 // Mobile Otp
 
 app.get("/checkotp", (req, res) => {
