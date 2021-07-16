@@ -27,12 +27,12 @@ router.post("/login", async (req, res) => {
                         res.redirect("/seller-form");
                     }
                     else {
-                        req.flash("error", "The password entered was incorrect !");
+                        req.flash("error", "The password entered was incorrect");
                         res.redirect("/login");
                     }
                 }
                 else {
-                    req.flash("error", "The username entered was incorrect !");
+                    req.flash("error", "The username entered was incorrect");
                     res.redirect("/login");
                 }
             }
@@ -50,12 +50,12 @@ router.post("/login", async (req, res) => {
                         res.redirect("/buyer-form");
                     }
                     else {
-                        req.flash("error", "The password entered was incorrect !");
+                        req.flash("error", "The password entered was incorrect");
                         res.redirect("/login");
                     }
                 }
                 else {
-                    req.flash("error", "The username entered was incorrect !");
+                    req.flash("error", "The username entered was incorrect");
                     res.redirect("/login");
                 }
             }
@@ -78,7 +78,7 @@ router.post("/login", async (req, res) => {
                         res.redirect("/seller-dashboard");
                     }
                     else if (isSeller === false) {
-                        req.flash("error", "The password entered was incorrect !");
+                        req.flash("error", "The password entered was incorrect");
                         res.redirect("/login");
                     }
                     else {
@@ -87,7 +87,7 @@ router.post("/login", async (req, res) => {
                     }
                 }
                 else if (!seller) {
-                    req.flash("error", "The username entered was incorrect !");
+                    req.flash("error", "The username entered was incorrect");
                     res.redirect("/login");
                 }
                 else {
@@ -108,12 +108,12 @@ router.post("/login", async (req, res) => {
                         res.redirect("/check");
                     }
                     else {
-                        req.flash("error", "The password entered was incorrect !");
+                        req.flash("error", "The password entered was incorrect");
                         res.redirect("/login");
                     }
                 }
                 else {
-                    req.flash("error", "The username entered was incorrect !");
+                    req.flash("error", "The username entered was incorrect");
                     res.redirect("/login");
                 }
             }
