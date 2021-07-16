@@ -46,15 +46,15 @@ router.post("/register", catchAsync(async (req, res) => {
         }
     } catch (e) {
         if (req.session.seller === true) {
-            if (e.message === `E11000 duplicate key error collection: Registers.sellerregisters index: email_1 dup key: { email: "${req.body.email}" }`) {
+            if (e.message === `E11000 duplicate key error collection: Database.sellerregisters index: email_1 dup key: { email: "${req.body.email}" }`) {
                 req.flash("mongoError", e.message = "The email id entered is already registered");
                 res.redirect("login");
             }
-            else if (e.message === `E11000 duplicate key error collection: Registers.sellerregisters index: mobile_1 dup key: { mobile: ${req.body.mobile}.0 }`) {
+            else if (e.message === `E11000 duplicate key error collection: Database.sellerregisters index: mobile_1 dup key: { mobile: ${req.body.mobile}.0 }`) {
                 req.flash("mongoError", e.message = "The mobile number entered is already registered");
                 res.redirect("login");
             }
-            else if (e.message === `E11000 duplicate key error collection: Registers.sellerregisters index: userName_1 dup key: { userName: "${req.body.userName}" }`) {
+            else if (e.message === `E11000 duplicate key error collection: Database.sellerregisters index: userName_1 dup key: { userName: "${req.body.userName}" }`) {
                 req.flash("mongoError", e.message = "The username entered is already taken");
                 res.redirect("login");
             }
@@ -64,15 +64,15 @@ router.post("/register", catchAsync(async (req, res) => {
             }
         }
         else if (req.session.buyer === true) {
-            if (e.message === `E11000 duplicate key error collection: Registers.sellerregisters index: email_1 dup key: { email: "${req.body.email}" }`) {
+            if (e.message === `E11000 duplicate key error collection: Database.sellerregisters index: email_1 dup key: { email: "${req.body.email}" }`) {
                 req.flash("mongoError", e.message = "The email id entered is already registered");
                 res.redirect("login");
             }
-            else if (e.message === `E11000 duplicate key error collection: Registers.sellerregisters index: mobile_1 dup key: { mobile: ${req.body.mobile}.0 }`) {
+            else if (e.message === `E11000 duplicate key error collection: Database.sellerregisters index: mobile_1 dup key: { mobile: ${req.body.mobile}.0 }`) {
                 req.flash("mongoError", e.message = "The mobile number entered is already registered");
                 res.redirect("login");
             }
-            else if (e.message === `E11000 duplicate key error collection: Registers.sellerregisters index: userName_1 dup key: { userName: "${req.body.userName}" }`) {
+            else if (e.message === `E11000 duplicate key error collection: Database.sellerregisters index: userName_1 dup key: { userName: "${req.body.userName}" }`) {
                 req.flash("mongoError", e.message = "The username entered is already taken");
                 res.redirect("login");
             }
