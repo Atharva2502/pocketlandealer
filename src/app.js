@@ -90,6 +90,7 @@ const buyerRegister = require("./models/Buyer Register");
 const Seller = require("./models/Seller Data");
 const Buyer = require("./models/Buyer Data");
 const googleSetup = require("../google-setup")
+const facebookSetup = require("../facebook-setup")
 
 // setting paths
 

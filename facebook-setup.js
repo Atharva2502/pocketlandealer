@@ -10,7 +10,7 @@ passport.deserializeUser(function (user, done) {
     done(null, user);
 });
 
-// Google Login
+// Facebook Login
 
 passport.use(new facebookStrategy({
     clientID: process.env.FACEBOOK_CLIENT_ID,
