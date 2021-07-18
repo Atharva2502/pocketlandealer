@@ -502,6 +502,10 @@ app.get("/logoutd", requireLogin, (req, res) => {
     console.log("User logged out")
 });
 
+app.get("/lout", (req, res) => {
+    req.session.destroy();
+})
+
 app.get("/deleteAcc", requireLogin, (req, res) => {
     if (req.session.seller === true) {
         req.session.username = null
