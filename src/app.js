@@ -502,17 +502,17 @@ app.get("/logoutd", requireLogin, (req, res) => {
     console.log("User logged out")
 });
 
-app.get("/louth", requireLogin, (req, res) => {
+app.get("/louth", (req, res) => {
     req.session.destroy();
     res.redirect("/");
 });
 
-app.get("/loutq", requireLogin, (req, res) => {
+app.get("/loutq", (req, res) => {
     req.session.destroy();
     res.redirect("/queries");
 });
 
-app.get("/louta", requireLogin, (req, res) => {
+app.get("/louta", (req, res) => {
     req.session.destroy();
     res.redirect("/about-us");
 });
