@@ -102,13 +102,11 @@ const newSeller = new mongoose.Schema({
             },
             mutation: {
                 url: String,
-                filename: String,
-                required: false
+                filename: String
             },
             searchreport: {
                 url: String,
-                filename: String,
-                required: false
+                filename: String
             },
             plotimages: {
                 plotimage1: {
