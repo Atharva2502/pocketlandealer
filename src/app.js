@@ -502,9 +502,20 @@ app.get("/logoutd", requireLogin, (req, res) => {
     console.log("User logged out")
 });
 
-app.get("/lout", (req, res) => {
+app.get("/louth", requireLogin, (req, res) => {
     req.session.destroy();
-})
+    res.redirect("/");
+});
+
+app.get("/loutq", requireLogin, (req, res) => {
+    req.session.destroy();
+    res.redirect("/queries");
+});
+
+app.get("/louta", requireLogin, (req, res) => {
+    req.session.destroy();
+    res.redirect("/about-us");
+});
 
 app.get("/deleteAcc", requireLogin, (req, res) => {
     if (req.session.seller === true) {
