@@ -326,6 +326,16 @@ input[type="search"] {
     color: #999;
 }
 
+#live {
+    z-index: 1;
+    box-shadow: 0 0 2px 1px lightgreen;
+}
+
+#sold {
+    z-index: 1;
+    box-shadow: 0 0 2px 1px rgb(209, 0, 0);
+}
+
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;

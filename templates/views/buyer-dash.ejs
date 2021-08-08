@@ -291,53 +291,71 @@
                                             <% items.forEach(function(path) { %>
                                                 <div class="col-md-4 mt-3 mb-5">
                                                     <div class="card">
-                                                        <div id="carouselExampleControls" class="carousel slide"
-                                                            data-bs-ride="carousel">
-                                                            <div class="carousel-inner">
-                                                                <div class="carousel-item active">
-                                                                    <img src="<%= path.userdata.userDocs.plotimages.plotimage1.url %>"
-                                                                        class="d-block w-100 card-img-top">
-                                                                </div>
-                                                                <div class="carousel-item">
-                                                                    <img src="<%= path.userdata.userDocs.plotimages.plotimage2.url %>"
-                                                                        class="d-block w-100 card-img-top">
-                                                                </div>
-                                                                <div class="carousel-item">
-                                                                    <img src="<%= path.userdata.userDocs.plotimages.plotimage3.url %>"
-                                                                        class="d-block w-100 card-img-top">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <ul class="list-group list-group-flush">
-                                                            <li class="list-group-item card-data d-flex">
-                                                                <img src="<%= path.userdata.userDocs.profilepic.url %>"
-                                                                    id="pic">
-                                                                <div>
-                                                                    <%= path.userdata.firstName %>
-                                                                        <%= path.userdata.middleName %>
-                                                                            <%= path.userdata.lastName %>
-                                                                                <p class="mb-0 pb-0">
-                                                                                    <%= path.userdata.mobNo %>
-                                                                                </p>
-                                                                </div>
-                                                            </li>
-                                                            <li class="list-group-item card-data">
-                                                                <b>Address | </b>
-                                                                <%= path.userdata.add %>
-                                                            </li>
-                                                            <li class="list-group-item card-imp"><b>Area</b> | <%=
-                                                                    path.userdata.areaPlot %>&nbsp;m<sup>2</sup>
-                                                            </li>
-                                                            <li class="list-group-item card-imp">
-                                                                <b>Price</b> |
-                                                                <%= path.userdata.pricePlot %>&nbsp;/- Rs
-                                                            </li>
-                                                        </ul>
-                                                        <div class="card-body text-center m-0 p-0">
-                                                            <button class="btn p-3" id="send" type="submit"
-                                                                value="<%= path._id %> " name="send">SEND
-                                                                REQUEST</button>
-                                                        </div>
+                                                        <% if (path.sold===true) { %>
+                                                            <span
+                                                                class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"
+                                                                id="sold">
+                                                                <span></span>
+                                                            </span>
+                                                            <% } else { %>
+                                                                <span
+                                                                    class="position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle"
+                                                                    id="live">
+                                                                    <span></span>
+                                                                </span>
+                                                                <% } %>
+                                                                    <div id="carouselExampleControls"
+                                                                        class="carousel slide" data-bs-ride="carousel">
+                                                                        <div class="carousel-inner">
+                                                                            <div class="carousel-item active">
+                                                                                <img src="<%= path.userdata.userDocs.plotimages.plotimage1.url %>"
+                                                                                    class="d-block w-100 card-img-top">
+                                                                            </div>
+                                                                            <div class="carousel-item">
+                                                                                <img src="<%= path.userdata.userDocs.plotimages.plotimage2.url %>"
+                                                                                    class="d-block w-100 card-img-top">
+                                                                            </div>
+                                                                            <div class="carousel-item">
+                                                                                <img src="<%= path.userdata.userDocs.plotimages.plotimage3.url %>"
+                                                                                    class="d-block w-100 card-img-top">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <ul class="list-group list-group-flush">
+                                                                        <li class="list-group-item card-data d-flex">
+                                                                            <img src="<%= path.userdata.userDocs.profilepic.url %>"
+                                                                                id="pic">
+                                                                            <div>
+                                                                                <%= path.userdata.firstName %>
+                                                                                    <%= path.userdata.middleName %>
+                                                                                        <%= path.userdata.lastName %>
+                                                                                            <p class="mb-0 pb-0">
+                                                                                                <%= path.userdata.mobNo
+                                                                                                    %>
+                                                                                            </p>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item card-data">
+                                                                            <b>Address | </b>
+                                                                            <%= path.userdata.add %>
+                                                                        </li>
+                                                                        <li class="list-group-item card-imp">
+                                                                            <b>Area</b>
+                                                                            |
+                                                                            <%= path.userdata.areaPlot %>
+                                                                                &nbsp;m<sup>2</sup>
+                                                                        </li>
+                                                                        <li class="list-group-item card-imp">
+                                                                            <b>Price</b> |
+                                                                            <%= path.userdata.pricePlot %>
+                                                                                &nbsp;/- Rs
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="card-body text-center m-0 p-0">
+                                                                        <button class="btn p-3" id="send" type="submit"
+                                                                            value="<%= path._id %> " name="send">SEND
+                                                                            REQUEST</button>
+                                                                    </div>
                                                     </div>
                                                 </div>
                                                 <% }) %>

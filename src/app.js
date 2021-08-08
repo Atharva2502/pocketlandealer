@@ -56,7 +56,8 @@ const app = express();
 
 // Session and Flash
 
-const URL = `${process.env.DB_URL}test` || "mongodb://localhost:27017/test"
+// const URL = `${process.env.DB_URL}test` || "mongodb://localhost:27017/test"
+const URL = "mongodb://localhost:27017/test"
 const SECRET = process.env.SECRET || "notagoodsecret"
 
 const sessionConfig = {
