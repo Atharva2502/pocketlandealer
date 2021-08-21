@@ -22,7 +22,6 @@ const MongoStore = require('connect-mongo');
 const { lock } = require("../routes/register");
 const { cloudinary } = require("../cloudinary/sellerUploads");
 const fast2sms = require("fast-two-sms");
-const puppeteer = require("puppeteer");
 var validator = require('aadhaar-validator')
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet');
