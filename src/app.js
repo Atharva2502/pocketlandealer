@@ -1234,16 +1234,11 @@ app.post("/send-docs", async (req, res) => {
         transporter.sendMail(mailoptions, async (err, info) => {
             if (err) {
                 console.log("error occured " + err);
-                req.flash("loggedIn", "Error sending documents")
-                res.redirect("/login")
             }
             else {
                 let viewcount = seller.viewcount + 1
                 await Seller.updateOne({ _id: tsid }, { $set: { viewcount: viewcount } });
                 console.log("email sent");
-
-                req.flash("success", "Documents Sent successfully !!!")
-                res.redirect("/login")
             }
         });
 
