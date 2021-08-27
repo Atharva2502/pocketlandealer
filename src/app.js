@@ -30,6 +30,7 @@ require("./db/conn");
 const app = express();
 
 // Puppeteer
+// currently not in use 
 
 // async function scrapeProduct(url) {
 //     const browser = await puppeteer.launch();
